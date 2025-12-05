@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>Login Page - Sikos Admin</title>
+		<title>Login</title>
 
 		<meta name="description" content="User login page" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -44,11 +44,9 @@
 						<div class="login-container">
 							<div class="center">
 								<h1>
-									<i class="ace-icon fa fa-leaf green"></i>
-									<span class="red">SiKos</span>
-									<span class="white" id="id-text2">Application</span>
+									<span class="white" id="id-text2">Kos Pak Joko</span>
 								</h1>
-								<h4 class="blue" id="id-company-text">&copy; Amanah Solution</h4>
+								<h4 class="blue" id="id-company-text">&copy; KosManager</h4>
 							</div>
 
 							<div class="space-6"></div>
@@ -57,9 +55,8 @@
 								<div id="login-box" class="login-box visible widget-box no-border">
 									<div class="widget-body">
 										<div class="widget-main">
-											<h4 class="header blue lighter bigger">
-												<i class="ace-icon fa fa-coffee green"></i>
-												Please Enter Your Information
+											<h4 class="header blue lighter bigger" style="text-align:center;">
+												Masukkan informasi login Anda
 											</h4>
 
 											<div class="space-6"></div>
@@ -85,12 +82,12 @@
 													<div class="clearfix">
 														<label class="inline">
 															<input type="checkbox" class="ace" />
-															<span class="lbl"> Remember Me</span>
+															<span class="lbl"> Ingat Saya</span>
 														</label>
 
 														<button type="button" class="width-35 pull-right btn btn-sm btn-primary" onclick="dologin()">
 															<i class="ace-icon fa fa-key"></i>
-															<span class="bigger-110">Login</span>
+															<span class="bigger-110">Masuk</span>
 														</button>
 													</div>
 
@@ -124,7 +121,7 @@
 											<div>
 												<a href="#" data-target="#forgot-box" class="forgot-password-link">
 													<i class="ace-icon fa fa-arrow-left"></i>
-													I forgot my password
+													Saya lupa kata sandi
 												</a>
 											</div>
 
@@ -143,12 +140,12 @@
 										<div class="widget-main">
 											<h4 class="header red lighter bigger">
 												<i class="ace-icon fa fa-key"></i>
-												Retrieve Password
+												Reset Kata Sandi
 											</h4>
 
 											<div class="space-6"></div>
 											<p>
-												Enter your email and to receive instructions
+												Masukkan email Anda untuk menerima instruksi
 											</p>
 
 											<form>
@@ -163,7 +160,7 @@
 													<div class="clearfix">
 														<button type="button" class="width-35 pull-right btn btn-sm btn-danger">
 															<i class="ace-icon fa fa-lightbulb-o"></i>
-															<span class="bigger-110">Send Me!</span>
+															<span class="bigger-110">Kirim</span>
 														</button>
 													</div>
 												</fieldset>
@@ -172,7 +169,7 @@
 
 										<div class="toolbar center">
 											<a href="#" data-target="#login-box" class="back-to-login-link">
-												Back to login
+												Kembali ke Masuk
 												<i class="ace-icon fa fa-arrow-right"></i>
 											</a>
 										</div>
@@ -184,12 +181,11 @@
 										<div class="widget-main">
 											<h4 class="header green lighter bigger">
 												<i class="ace-icon fa fa-users blue"></i>
-												New User Registration
+												Registrasi Pengguna Baru
 											</h4>
 
 											<div class="space-6"></div>
-											<p> Enter your details to begin: </p>
-
+											<p> Masukkan detail Anda untuk memulai: </p>
 											<form>
 												<fieldset>
 													<label class="block clearfix">
@@ -201,21 +197,21 @@
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="Username" />
+															<input type="text" class="form-control" placeholder="Nama Pengguna" />
 															<i class="ace-icon fa fa-user"></i>
 														</span>
 													</label>
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="Password" />
+															<input type="password" class="form-control" placeholder="Kata Sandi" />
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
 													</label>
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="Repeat password" />
+															<input type="password" class="form-control" placeholder="Ulangi Kata Sandi" />
 															<i class="ace-icon fa fa-retweet"></i>
 														</span>
 													</label>
@@ -223,8 +219,8 @@
 													<label class="block">
 														<input type="checkbox" class="ace" />
 														<span class="lbl">
-															I accept the
-															<a href="#">User Agreement</a>
+															Saya menerima
+															<a href="#">Perjanjian Pengguna</a>
 														</span>
 													</label>
 
@@ -237,7 +233,7 @@
 														</button>
 
 														<button type="button" class="width-65 pull-right btn btn-sm btn-success">
-															<span class="bigger-110">Register</span>
+															<span class="bigger-110">Daftar</span>
 
 															<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
 														</button>
@@ -249,7 +245,7 @@
 										<div class="toolbar center">
 											<a href="#" data-target="#login-box" class="back-to-login-link">
 												<i class="ace-icon fa fa-arrow-left"></i>
-												Back to login
+												Kembali ke Masuk
 											</a>
 										</div>
 									</div><!-- /.widget-body -->
