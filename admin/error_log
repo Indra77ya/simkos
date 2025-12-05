@@ -1,0 +1,6 @@
+[21-Sep-2023 16:32:49 Asia/Jakarta] PHP Fatal error:  Call to a member function do_upload() on null in /home/studioc1/public_html/sikos-admin/application/controllers/e_pendaftaran.php on line 389
+[21-Sep-2023 20:45:26 Asia/Jakarta] PHP Fatal error:  Call to a member function do_upload() on null in /home/studioc1/public_html/sikos-admin/application/controllers/e_pendaftaran.php on line 389
+[21-Sep-2023 20:55:14 Asia/Jakarta] PHP Fatal error:  Call to a member function do_upload() on null in /home/studioc1/public_html/sikos-admin/application/controllers/e_pendaftaran.php on line 389
+[21-Sep-2023 21:17:51 Asia/Jakarta] PHP Fatal error:  Call to a member function do_upload() on null in /home/studioc1/public_html/sikos-admin/application/controllers/e_pendaftaran.php on line 389
+[21-May-2024 15:30:51 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '%' in /home/studioc1/public_html/sikos-admin/application/views/ftransaksi/frmpop_edit.php on line 7
+[21-May-2024 15:30:54 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '%' in /home/studioc1/public_html/sikos-admin/application/views/ftransaksi/frmpop_edit.php on line 7

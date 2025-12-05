@@ -1,0 +1,18 @@
+[09-Sep-2022 16:06:49 Asia/Jakarta] PHP Fatal error:  DISEVAL - Use of eval is forbidden in /home/studioc1/public_html/sikos-tenant/system/database/DB.php(130) : eval()'d code on line 1
+[09-Sep-2022 16:06:49 Asia/Jakarta] PHP Stack trace:
+[09-Sep-2022 16:06:49 Asia/Jakarta] PHP   1. {main}() /home/studioc1/public_html/sikos-tenant/index.php:0
+[09-Sep-2022 16:06:49 Asia/Jakarta] PHP   2. require_once() /home/studioc1/public_html/sikos-tenant/index.php:202
+[09-Sep-2022 16:06:49 Asia/Jakarta] PHP   3. dashboard->__construct() /home/studioc1/public_html/sikos-tenant/system/core/CodeIgniter.php:309
+[09-Sep-2022 16:06:49 Asia/Jakarta] PHP   4. MY_App->__construct() /home/studioc1/public_html/sikos-tenant/application/controllers/dashboard.php:8
+[09-Sep-2022 16:06:49 Asia/Jakarta] PHP   5. CI_Controller->__construct() /home/studioc1/public_html/sikos-tenant/application/core/MY_App.php:52
+[09-Sep-2022 16:06:49 Asia/Jakarta] PHP   6. CI_Loader->initialize() /home/studioc1/public_html/sikos-tenant/system/core/Controller.php:52
+[09-Sep-2022 16:06:49 Asia/Jakarta] PHP   7. CI_Loader->_ci_autoloader() /home/studioc1/public_html/sikos-tenant/system/core/Loader.php:153
+[09-Sep-2022 16:06:49 Asia/Jakarta] PHP   8. CI_Loader->database() /home/studioc1/public_html/sikos-tenant/system/core/Loader.php:1172
+[09-Sep-2022 16:06:49 Asia/Jakarta] PHP   9. DB() /home/studioc1/public_html/sikos-tenant/system/core/Loader.php:347
+[09-Sep-2022 16:06:49 Asia/Jakarta] PHP  10. eval() /home/studioc1/public_html/sikos-tenant/system/database/DB.php:130
+[04-Jul-2023 15:50:59 Asia/Jakarta] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/studioc1/public_html/sikos-tenant/application/config/config.php on line 378
+[04-Jul-2023 15:50:59 Asia/Jakarta] PHP Fatal error:  Cannot redeclare __autoload() (previously declared in /home/studioc1/public_html/sikos-tenant/application/config/config.php:378) in /home/studioc1/public_html/sikos-tenant/application/config/config.php on line 0
+[04-Jul-2023 15:51:15 Asia/Jakarta] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/studioc1/public_html/sikos-tenant/application/config/config.php on line 378
+[04-Jul-2023 15:51:15 Asia/Jakarta] PHP Fatal error:  Cannot redeclare __autoload() (previously declared in /home/studioc1/public_html/sikos-tenant/application/config/config.php:378) in /home/studioc1/public_html/sikos-tenant/application/config/config.php on line 0
+[04-Jul-2023 15:51:43 Asia/Jakarta] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/studioc1/public_html/sikos-tenant/application/config/config.php on line 378
+[04-Jul-2023 15:51:43 Asia/Jakarta] PHP Fatal error:  Cannot redeclare __autoload() (previously declared in /home/studioc1/public_html/sikos-tenant/application/config/config.php:378) in /home/studioc1/public_html/sikos-tenant/application/config/config.php on line 0
