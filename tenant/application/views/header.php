@@ -14,7 +14,7 @@
 					<a href="index.html" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
-							SiKos Admin
+							Kos Pak Joko
 						</small>
 					</a>
 				</div>

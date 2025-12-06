@@ -22,8 +22,7 @@ $total=$monthUnpaidNotif+$yearUnpaidNotif+$weekUnpaidNotif+$dayUnpaidNotif;
 				<div class="navbar-header pull-left">
 					<a href="<?php echo base_url();?>" class="navbar-brand">
 						<small>
-							<i class="fa fa-leaf"></i>
-							SiKos Admin
+							Kos Pak Joko
 						</small>
 					</a>
 

@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>SiKos Admin <?php if (isset($pagetitle)) echo ' - '.$pagetitle;?></title>
+		<title>Kos Pak Joko <?php if (isset($pagetitle)) echo ' - '.$pagetitle;?></title>
 
 		<meta name="description" content="overview &amp; stats" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -177,14 +177,13 @@
 			<div class="footer">
 				<div class="footer-inner">
 					<div class="footer-content">
-						<span class="bigger-120">
-							<span class="blue bolder">Sikos</span>
-							Application 
+						<span class="">
+							Kos Pak Joko
 						</span>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
-						<span class="action-buttons">
+						<span class="">
 							<?php echo anchor('dashboard/eula','<i class="menu-icon fa 	fa-gavel"></i> <span class="menu-text"> Licensing Agreement</span>','class="ajax-link"');?>
 							&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
-							<a href="http://www.amanahsolution.com" target="_blank">Amanah Solution&trade;</a>&nbsp;&nbsp;&nbsp;&copy; 2012-<?php echo date('Y')?>
+							<a href="#" target="_blank">Kos Manager</a>	<br> Hak Cipta Dilindungi <?php echo date('Y')?>
 						</span>
 					</div>
 				</div>
