@@ -181,9 +181,9 @@
 							Kos Pak Joko
 						</span>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
 						<span class="">
-							<?php echo anchor('dashboard/eula','<i class="menu-icon fa 	fa-gavel"></i> <span class="menu-text"> Licensing Agreement</span>','class="ajax-link"');?>
+							<?php echo anchor('dashboard/eula','<i class=></i> <span class="menu-text"> Licensing Agreement</span>','class="ajax-link"');?>
 							&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
-							<a href="#" target="_blank">Kos Manager</a>	<br> Hak Cipta Dilindungi <?php echo date('Y')?>
+							<!-- <a href="#" target="_blank">Kos Manager</a> --> Hak Cipta Dilindungi <?php echo date('Y')?>
 						</span>
 					</div>
 				</div>
