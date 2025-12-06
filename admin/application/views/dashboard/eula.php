@@ -14,7 +14,7 @@
 
 										<hr />
 										<h3 class="lighter smaller">
-											Agreement Seluruh Software Amanah Solution :											
+											Agreement Seluruh Software Kos Manager :											
 										</h3>
 
 										<div class="space"></div>
@@ -22,9 +22,28 @@
 										<div >
 										
 										<div style="font-size: 14px;">
-Aplikasi ini dikembangkan dengan lisensi hanya untuk 1 ORANG/ LEMBAGA KLIEN AMANAH SOLUTION. Boleh dirubah fiturnya dan atau dikembangkan kembali oleh KLIEN PEMEGANG LISENSI khusus untuk Lembaga/ Perusahaannya sebagaimana yang dimaksud baik dengan bekerjasama dengan Amanah Solution maupun menyewa vendor pengembang yang lain.
-Dilarang keras untuk mengkopi, mendistribusikan, dan atau mengkomersilkan ke pihak lain dalam bentuk asli, perubahan fitur, dan atau pengembangannya yang seperti,apapun juga tanpa persetujuan tertulis dari AMANAH SOLUTION.
-Segala bentuk pelanggaran menjadi tanggungjawab pelanggar kepada Allah Ta'ala Sang Pelindung karya dan kreatifitas hamba-hambaNya.
+<p>
+  Aplikasi ini dikembangkan dengan lisensi yang berlaku 
+  <b>hanya untuk satu orang atau satu lembaga klien KOS MANAGER</b>.
+</p>
+
+<ul>
+  <li>
+    <b>Hak Pemegang Lisensi:</b> Pemegang lisensi berhak melakukan perubahan fitur 
+    dan/atau pengembangan lebih lanjut sesuai kebutuhan lembaga atau perusahaannya, 
+    baik dengan bekerja sama dengan Kos Manager maupun melalui vendor pengembang lain.
+  </li>
+  <li>
+    <b>Larangan:</b> Dilarang keras menyalin, mendistribusikan, atau mengkomersialkan aplikasi ini 
+    kepada pihak lain dalam bentuk asli, hasil modifikasi, maupun pengembangan turunan apa pun 
+    tanpa persetujuan tertulis dari KOS MANAGER.
+  </li>
+  <li>
+    <b>Tanggung Jawab:</b> Segala bentuk pelanggaran menjadi tanggung jawab penuh pelanggar, 
+    baik secara hukum maupun moral, di hadapan Allah Ta’ala sebagai Pelindung karya 
+    dan kreativitas hamba-hamba-Nya.
+  </li>
+</ul>
 
 									</div>
 
