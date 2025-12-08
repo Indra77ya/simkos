@@ -44,9 +44,33 @@
 						<div class="login-container">
 							<div class="center">
 								<h1>
-									<span class="white" id="id-text2">Kos Pak Joko</span>
+									<span class="white" id="id-text2"></span>
+
+<script>
+  function ucapanSelamat() {
+    const now = new Date();
+    const jam = now.getHours();
+    let ucapan = "Selamat ";
+
+    if (jam >= 5 && jam < 11) {
+      ucapan += "Pagi";
+    } else if (jam >= 11 && jam < 15) {
+      ucapan += "Siang";
+    } else if (jam >= 15 && jam < 18) {
+      ucapan += "Sore";
+    } else {
+      ucapan += "Malam";
+    }
+
+    document.getElementById("id-text2").textContent = ucapan;
+  }
+
+  // jalankan saat halaman dimuat
+  ucapanSelamat();
+</script>
+
 								</h1>
-								<h4 class="blue" id="id-company-text">&copy; KosManager</h4>
+								<h4 class="blue" id="id-company-text">&copy; Kos Manager</h4>
 							</div>
 
 							<div class="space-6"></div>
