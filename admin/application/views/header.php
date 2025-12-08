@@ -221,7 +221,7 @@ $total=$monthUnpaidNotif+$yearUnpaidNotif+$weekUnpaidNotif+$dayUnpaidNotif;
 								<?php echo anchor('rekening/index','<i class="ace-icon fa fa-caret-right bigger-110 blue"></i>Info Rekening');?>								
 							</li>
 							<li class="<?=($setSubMenu=="mn18"?"active":"")?>">
-								<?php echo anchor('setting/receipt_var','<i class="ace-icon fa fa-caret-right bigger-110 blue"></i>Seting Pernyataan');?>								
+								<?php echo anchor('setting/receipt_var','<i class="ace-icon fa fa-caret-right bigger-110 blue"></i>Setting Pernyataan');?>								
 							</li>
 							<li class="<?=($setSubMenu=="mn19"?"active":"")?>">
 								<?php echo anchor('setting/kwh_listrik','<i class="ace-icon fa fa-caret-right bigger-110 blue"></i>Variabel Kwh PLN');?>								
