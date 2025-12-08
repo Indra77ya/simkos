@@ -28,7 +28,7 @@ class jenis_rutin extends MY_App {
 			$sortby = $this->input->get('iSortCol_0');
 			$srotdir = $this->input->get('sSortDir_0');
 			
-			$str = "select iditem, item from itemoption";
+			$str = "select iditem, item from itemoption where idcat=2";
 			
 						
 			if ( $_GET['sSearch'] != "" )
