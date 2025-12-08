@@ -13,7 +13,7 @@
 	<!-- <li><?=$str."<br>".strlen($res->bln)."#".$mm_tgldaftar?></li> -->
 	<li>Tagihan sewa tahunan akan muncul sesuai tanggal mulai masuk</li>
 	<li>Pembayaran pertama, denda tidak dihitung</li>
-	<li>Terlambat bayar akan dikenai denda, besar denda per hari sesuai setting denda di pusat data. [saat ini besarnya : <b>Rp <?php echo number_format($denda, 2, ',','.')?>]</b> per hari dan akan keluar setelah  <b> <?php echo $hari_ke_denda?></b> hari (sesuai seting data master) setelah tanggal tagihan</li>	
+	<li>Terlambat bayar akan dikenai denda, besar denda per hari sesuai setting denda di pusat data. <b>[saat ini besarnya : Rp <?php echo number_format($denda, 2, ',','.')?>]</b> per hari dan akan keluar <b>setelah <?php echo $hari_ke_denda?> hari</b> (sesuai seting data master) setelah tanggal tagihan</li>	
 	</ul>
 </div>
 <?php echo form_open(null,array("class"=>"form-horizontal","id"=>"myform_bln"));?>

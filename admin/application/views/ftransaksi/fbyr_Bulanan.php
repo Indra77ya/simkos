@@ -21,7 +21,7 @@
 	<!-- <li><?=$str."<br>".strlen($res->bln)."#".$mm_tglmulai?></li> -->
 	<li>Tagihan sewa bulanan akan muncul sesuai tanggal mulai inap</li>
 	<li>Pembayaran pertama, denda tidak dihitung</li>
-	<li>Terlambat bayar akan dikenai denda, besar denda per hari sesuai setting denda di pusat data. [saat ini besarnya : <b>Rp <?php echo number_format($denda, 2, ',','.')?>]</b> per hari dan akan keluar setelah  <b> <?php echo $hari_ke_denda?></b> hari (sesuai seting data master) setelah tanggal tagihan</li>	
+	<li>Terlambat bayar akan dikenai denda, besar denda per hari sesuai setting denda di pusat data. <b>[saat ini besarnya : Rp <?php echo number_format($denda, 2, ',','.')?>]</b> per hari dan akan keluar <b>setelah <?php echo $hari_ke_denda?> hari</b> (sesuai seting data master) setelah tanggal tagihan</li>	
 	<li>klik link "invoice" untuk cek dan generate data tagihan sehingga link berubah jadi "print invoice", link "print invoice" untuk download file pdf invoice dan siap di print atau dikirim</li>
 	</ul>
 </div>
