@@ -194,14 +194,13 @@
 			<div class="footer">
 				<div class="footer-inner">
 					<div class="footer-content">
-						<span class="bigger-120">
-							<span class="blue bolder">Sikos</span>
-							Application 
+						<span class="">
+							Kos Pak Joko
 						</span>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
-						<span class="action-buttons">
-							<?php echo anchor('dashboard/eula','<i class="menu-icon fa 	fa-gavel"></i> <span class="menu-text"> Licensing Agreement</span>','class="ajax-link"');?>
+						<span class="">
+							<?php echo anchor('dashboard/eula','<i class=></i> <span class="menu-text"> Licensing Agreement</span>','class="ajax-link"');?>
 							&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
-							<a href="http://www.amanahsolution.com" target="_blank">Amanah Solution&trade;</a>&nbsp;&nbsp;&nbsp;&copy; 2012-<?php echo date('Y')?>
+							<!-- <a href="#" target="_blank">Kos Manager</a> --> Hak Cipta Dilindungi <?php echo date('Y')?>
 						</span>
 					</div>
 				</div>

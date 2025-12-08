@@ -31,7 +31,7 @@ echo form_open_multipart('profil/data_login',array('class'=>'form-horizontal','i
 	<div class="col-md-8">
 		<div class="form-group"><label  class="col-sm-4 control-label">Kamar*</label>
 			<div class="col-sm-8 "><?=form_input(array("name"=>"lblkamar","id"=>"lblkamar","class"=>"form-control", "value"=>$res->labelkamar, "readonly"=>true));?>
-			<label  style="text-align:left">Gunakan Form Pindah kamar untuk ubah kamar</label>
+			<label  style="text-align:left">Hubungi admin untuk pindah kamar</label>
 			<input type="hidden" name="idkamar" id="idkamar"  size="20"  value="<?php echo $res->idkamar?>"/>
 			
 			</div>

@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>Kos Pak Joko <?php if (isset($pagetitle)) echo ' - '.$pagetitle;?></title>
+		<title>Kos Manager <?php if (isset($pagetitle)) echo ' - '.$pagetitle;?></title>
 
 		<meta name="description" content="overview &amp; stats" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -178,7 +178,7 @@
 				<div class="footer-inner">
 					<div class="footer-content">
 						<span class="">
-							Kos Pak Joko
+							Kos Manager
 						</span>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
 						<span class="">
 							<?php echo anchor('dashboard/eula','<i class=></i> <span class="menu-text"> Licensing Agreement</span>','class="ajax-link"');?>
