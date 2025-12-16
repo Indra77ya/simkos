@@ -70,7 +70,7 @@
 </script>
 
 								</h1>
-								<h4 class="blue" id="id-company-text">&copy; Kos Manager</h4>
+								<h4 class="blue" id="id-company-text">&copy; SimKos</h4>
 							</div>
 
 							<div class="space-6"></div>

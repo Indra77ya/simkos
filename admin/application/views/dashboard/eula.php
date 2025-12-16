@@ -14,7 +14,7 @@
 
 										<hr />
 										<h3 class="lighter smaller">
-											Agreement Seluruh Software Kos Manager :											
+											Agreement Seluruh Software SimKos :											
 										</h3>
 
 										<div class="space"></div>
@@ -24,19 +24,19 @@
 										<div style="font-size: 14px;">
 <p>
   Aplikasi ini dikembangkan dengan lisensi yang berlaku 
-  <b>hanya untuk satu orang atau satu lembaga klien KOS MANAGER</b>.
+  <b>hanya untuk satu orang atau satu lembaga klien SimKos</b>.
 </p>
 
 <ul>
   <li>
     <b>Hak Pemegang Lisensi:</b> Pemegang lisensi berhak melakukan perubahan fitur 
     dan/atau pengembangan lebih lanjut sesuai kebutuhan lembaga atau perusahaannya, 
-    baik dengan bekerja sama dengan Kos Manager maupun melalui vendor pengembang lain.
+    baik dengan bekerja sama dengan SimKos maupun melalui vendor pengembang lain.
   </li>
   <li>
     <b>Larangan:</b> Dilarang keras menyalin, mendistribusikan, atau mengkomersialkan aplikasi ini 
     kepada pihak lain dalam bentuk asli, hasil modifikasi, maupun pengembangan turunan apa pun 
-    tanpa persetujuan tertulis dari KOS MANAGER.
+    tanpa persetujuan tertulis dari SimKos.
   </li>
   <li>
     <b>Tanggung Jawab:</b> Segala bentuk pelanggaran menjadi tanggung jawab penuh pelanggar, 

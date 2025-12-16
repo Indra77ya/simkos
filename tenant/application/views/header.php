@@ -13,7 +13,7 @@
 				<div class="navbar-header pull-left">
 					<a href="<?php echo base_url();?>" class="navbar-brand">
 						<small>
-							Kos Pak Joko
+							SimKos
 						</small>
 					</a>
 				</div>
