@@ -152,7 +152,7 @@
 									</div>
 								</div><!-- /.pull-left -->
 
-								<div class="pull-left width-50">
+								<!-- <div class="pull-left width-50">
 									<div class="ace-settings-item">
 										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" autocomplete="off" />
 										<label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
@@ -167,9 +167,9 @@
 										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" autocomplete="off" />
 										<label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
 									</div>
-								</div><!-- /.pull-left -->
+								</div> --><!-- /.pull-left --><!-- /.pull-left -->
 							</div><!-- /.ace-settings-box -->
-						</div> --><!-- /.ace-settings-container --><!-- /.ace-settings-container -->
+						</div><!-- /.ace-settings-container --><!-- /.ace-settings-container -->
 
 						<div class="page-header">
 						<?php if (isset($breadcrumbs)) 
