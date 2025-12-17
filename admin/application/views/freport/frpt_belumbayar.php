@@ -21,7 +21,7 @@
 <br>
 <div class="row" style="text-align:center">
 	<div class="col-md-12">
-		<button  id="btToExcel" class="btn btn-success" >Cetak Xls</button>&nbsp;
+		<!--<button  id="btToExcel" class="btn btn-success" >Cetak Xls</button>&nbsp;-->
 		<button type="submit" id="btToPdf" class="btn btn-warning" >Cetak Pdf</button>&nbsp;
 			
 	</div>
