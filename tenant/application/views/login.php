@@ -142,12 +142,12 @@
 										</div><!-- /.widget-main -->
 
 										<div class="toolbar clearfix">
-											<!--<div>
-												<a href="#" data-target="#forgot-box" class="forgot-password-link">
+											<div>
+												<a href="https://simkos.hassapos.online" >
 													<i class="ace-icon fa fa-arrow-left"></i>
-													Saya lupa kata sandi
+													Kembali
 												</a>
-											</div>-->
+											</div>
 											<!-- <div>
 												<a href="#" data-target="#signup-box" class="user-signup-link">
 													I want to register
