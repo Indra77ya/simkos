@@ -142,12 +142,12 @@
 										</div><!-- /.widget-main -->
 
 										<div class="toolbar clearfix">
-											<div>
+											<!--<div>
 												<a href="#" data-target="#forgot-box" class="forgot-password-link">
 													<i class="ace-icon fa fa-arrow-left"></i>
 													Saya lupa kata sandi
 												</a>
-											</div>
+											</div>-->
 
 											<!-- <div>
 												<a href="#" data-target="#signup-box" class="user-signup-link">
