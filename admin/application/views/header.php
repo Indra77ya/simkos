@@ -249,10 +249,10 @@ $total=$monthUnpaidNotif+$yearUnpaidNotif+$weekUnpaidNotif+$dayUnpaidNotif;
 								
 							</li>
 							<?php if ($role=="Admin" || $role=="Superadmin"){ ?>
-							<li class="<?=($setSubMenu=="mn82"?"active":"")?>">								
+							<!--<li class="<?=($setSubMenu=="mn82"?"active":"")?>">								
 								<?php echo anchor('email/index','<i class="ace-icon fa fa-caret-right bigger-110 blue"></i>Kirim E-mail');?>
 								
-							</li>
+							</li>-->
 							<?php } ?>
 						</ul>
 					</li>
