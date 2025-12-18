@@ -375,7 +375,7 @@ config var as global var
 */
 $config['mymenu']='';
 $config['mysubmenu']='';
-$config['tenant_url']='http://sikos42tenant.amanahsolution.com/';
+$config['tenant_url']='http://localhost/simkos/tenant/';
 
 
 
