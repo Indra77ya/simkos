@@ -519,7 +519,8 @@ function openRoomList(myurl, jenis, idlokasi){
 				function(data){
 					
 					var thisBox=bootbox.dialog({
-					  onEscape	:true,					 
+					  onEscape	:true,	
+					  size: "large",				 
 					  message: data,
 					  title: "Daftar Kamar",
 					  buttons: {
