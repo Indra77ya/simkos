@@ -6,7 +6,7 @@
 			<div class="col-sm-4">
 			<?	
 				if ($this->session->userdata('auth')->ROLE=="Superadmin"){
-					echo form_dropdown('lokasi',$lokasi,'','id="lokasi" class="form-control"');
+					echo form_dropdown('lokasi',$lokasi,'','id="lokasi" class="form-control" style="width: auto;"');
 				}else{
 					echo '<input type="hidden" name="lokasi" id ="lokasi" value="'.$lokasi->id.'"/>';
 					echo '<label  class="col-sm-4 control-label">'.$lokasi->lokasi.'</label>';
@@ -94,7 +94,23 @@
 			"sAjaxSource": "<?php echo base_url('kamar/json_data_pilih');?>"
 		});
 
-		
+		// Adjust dropdown width to fit longest option
+		if ($('#lokasi').length) {
+			var maxWidth = 0;
+			$('#lokasi option').each(function() {
+				var tempSpan = $('<span>').text($(this).text()).css({
+					'font-family': $('#lokasi').css('font-family'),
+					'font-size': $('#lokasi').css('font-size'),
+					'visibility': 'hidden',
+					'white-space': 'nowrap',
+					'position': 'absolute'
+				}).appendTo('body');
+				var width = tempSpan.width();
+				if (width > maxWidth) maxWidth = width;
+				tempSpan.remove();
+			});
+			$('#lokasi').css('width', (maxWidth + 30) + 'px'); // Add some padding
+		}
 
     });	
 
