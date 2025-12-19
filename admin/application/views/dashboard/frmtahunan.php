@@ -55,7 +55,7 @@
 		<div class="form-group"><label class="col-sm-4 control-label">Tanggal Mulai Masuk</label>
 			<div class="col-sm-8">
 			<div class="input-group date input-group-sm" id="myModalWithDatePicker">
-				<input type="text" id="thn_tgldaftar" name="thn_tgldaftar" class="form-control" value="<?php echo date('d/m/Y')?>" style="position: relative; z-index: 1600;" readonly/>
+				<input type="text" id="thn_tgldaftar" name="thn_tgldaftar" class="form-control" value="<?php echo date('Y-m-d')?>" style="position: relative; z-index: 1600;" readonly/>
 				<span class="input-group-addon" id="thn_tgldaftar_ico">
 				<i class="ace-icon fa fa-calendar"></i>
 				</span>
