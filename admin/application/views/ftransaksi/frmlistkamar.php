@@ -2,7 +2,7 @@
 <br>
 <div class="row">
 	<div class="col-md-8"><div class="form-group">
-		<label for="role" class="col-sm-4 control-label">Lokasi</label>
+		<label for="role" class="col-sm-1 control-label">Lokasi</label>
 			<div class="col-sm-4">
 			<?	
 				if ($this->session->userdata('auth')->ROLE=="Superadmin"){
