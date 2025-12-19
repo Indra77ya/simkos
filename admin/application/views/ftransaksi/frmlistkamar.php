@@ -70,7 +70,7 @@
 				{"mData": "KUOTA" },
 				{"mData": "TERISI" },
 				{"mData": "SISA" },
-				{"mData": "FASILITAS", "sWidth": "250px" },
+				{"mData": "FASILITAS", "sWidth": "1200px" },
 				{"mData": "TAHUNAN" },
 				{"mData": "BULANAN" },
 				{"mData": "MINGGUAN" },
