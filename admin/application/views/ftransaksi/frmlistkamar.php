@@ -60,6 +60,7 @@
 			"bProcessing": true,
 			"bServerSide": true,
 			"iDisplayLength": 25,
+			"bAutoWidth": false,
 			"fnServerParams": function ( aoData ) {
 				aoData.push( { "name": "idlokasi", "value": $('#lokasi').val() });
 			},
@@ -75,6 +76,19 @@
 				{"mData": "BULANAN" },
 				{"mData": "MINGGUAN" },
 				{"mData": "HARIAN" }
+			],
+			"aoColumnDefs": [
+				{ "sWidth": "5%", "aTargets": [ 0 ] },
+				{ "sWidth": "10%", "aTargets": [ 1 ] },
+				{ "sWidth": "15%", "aTargets": [ 2 ] },
+				{ "sWidth": "5%", "aTargets": [ 3 ] },
+				{ "sWidth": "5%", "aTargets": [ 4 ] },
+				{ "sWidth": "5%", "aTargets": [ 5 ] },
+				{ "sWidth": "25%", "aTargets": [ 6 ] },
+				{ "sWidth": "7.5%", "aTargets": [ 7 ] },
+				{ "sWidth": "7.5%", "aTargets": [ 8 ] },
+				{ "sWidth": "7.5%", "aTargets": [ 9 ] },
+				{ "sWidth": "7.5%", "aTargets": [ 10 ] }
 			],
 			"sAjaxSource": "<?php echo base_url('kamar/json_data_pilih');?>"
 		});
