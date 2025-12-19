@@ -79,7 +79,7 @@
 			"sAjaxSource": "<?php echo base_url('kamar/json_data_pilih');?>"
 		});
 
-		
+		$('#dataTables-cab').closest('.modal-dialog').addClass('modal-lg');
 
     });	
 
