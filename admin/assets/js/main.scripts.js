@@ -522,7 +522,6 @@ function openRoomList(myurl, jenis, idlokasi){
 					  onEscape	:true,					 
 					  message: data,
 					  title: "Daftar Kamar",
-					  className: "modal-lg",
 					  buttons: {
 				
 						main: {
