@@ -26,7 +26,7 @@
 		<thead>
 			<tr>
 				<th>ID</th>							
-				<th>KAMAR TES</th>	
+				<th>KAMAR</th>	
 				<th>LOKASI</th>	
 				<th>KUOTA</th>				
 				<th>TERISI</th>
