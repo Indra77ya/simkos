@@ -21,7 +21,7 @@
 	</div>
 </div>
 <br>
-<div class="table-responsive">
+<div>
 	<table class="table table-striped table-bordered table-hover " id="dataTables-cab">
 		<thead>
 			<tr>
