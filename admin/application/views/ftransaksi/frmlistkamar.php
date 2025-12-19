@@ -70,7 +70,7 @@
 				{"mData": "KUOTA" },
 				{"mData": "TERISI" },
 				{"mData": "SISA" },
-				{"mData": "FASILITAS" },
+				{"mData": "FASILITAS", "sWidth": "250px" },
 				{"mData": "TAHUNAN" },
 				{"mData": "BULANAN" },
 				{"mData": "MINGGUAN" },
@@ -79,7 +79,7 @@
 			"sAjaxSource": "<?php echo base_url('kamar/json_data_pilih');?>"
 		});
 
-		
+		$('#dataTables-cab').closest('.modal-dialog').addClass('modal-lg');
 
     });	
 
