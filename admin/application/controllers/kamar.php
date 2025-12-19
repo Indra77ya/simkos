@@ -20,7 +20,7 @@ class kamar extends MY_App {
 			$data['lokasi'] =$this->common_model->getLokasi($this->session->userdata('auth')->IDLOKASI);
 		}
 		$this->template->set('breadcrumbs','<h1>Pusat Data<small> <i class="ace-icon fa fa-angle-double-right"></i> Master kamar</small></h1>');
-		$this->template->set('pagetitle','Daftar kamar ');		
+		$this->template->set('pagetitle','Daftar kama ');		
 		$this->template->load('default','fmaster/vkamar',$data);
 	}
 	
