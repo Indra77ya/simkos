@@ -534,6 +534,7 @@ function openRoomList(myurl, jenis, idlokasi){
 					  }
 					});
 					thisBox.attr('id','mydialog');
+					thisBox.find('.modal-dialog').css('width', '90%');
 				}
 		});
 	}
