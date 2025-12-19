@@ -113,7 +113,7 @@
 <div class="row">
 	<div class="col-md-11">
 		<div class="form-group"><label class="col-sm-4 control-label">&nbsp;</label>
-			<div class="col-sm-8"><img id="imgFoto_thn" name="imgFoto_thn" src="<?php echo base_url("assets/images/placeholder/none.gif")?>" width="130" height="130">	</div>
+			<div class="col-sm-8"><img id="imgFoto_thn" name="imgFoto_thn" src="<?php echo base_url("assets/images/placeholder/none.gif")?>" width="130" height="150">	</div>
 		</div>
 	</div>
 </div>
