@@ -60,21 +60,6 @@
 			"bProcessing": true,
 			"bServerSide": true,
 			"iDisplayLength": 25,
-			"responsive": true,
-			"autoWidth": false,
-			"columnDefs": [
-				{ "width": "5%", "targets": 0 },
-				{ "width": "15%", "targets": 1 },
-				{ "width": "10%", "targets": 2 },
-				{ "width": "8%", "targets": 3 },
-				{ "width": "8%", "targets": 4 },
-				{ "width": "8%", "targets": 5 },
-				{ "width": "15%", "targets": 6 },
-				{ "width": "10%", "targets": 7 },
-				{ "width": "10%", "targets": 8 },
-				{ "width": "10%", "targets": 9 },
-				{ "width": "10%", "targets": 10 }
-			],
 			"fnServerParams": function ( aoData ) {
 				aoData.push( { "name": "idlokasi", "value": $('#lokasi').val() });
 			},
