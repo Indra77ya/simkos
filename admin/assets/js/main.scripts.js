@@ -518,16 +518,10 @@ function openRoomList(myurl, jenis, idlokasi){
 				
 				function(data){
 					
-					$('<style>')
-						.prop('type', 'text/css')
-						.html('.wide-dialog .modal-dialog { width: 90% !important; }')
-						.appendTo('head');
-
 					var thisBox=bootbox.dialog({
 					  onEscape	:true,					 
 					  message: data,
 					  title: "Daftar Kamar",
-					  className: "wide-dialog",
 					  buttons: {
 				
 						main: {
