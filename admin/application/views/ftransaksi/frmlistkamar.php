@@ -22,7 +22,7 @@
 </div>
 <br>
 <div class="table-responsive">
-	<table class="table table-striped table-bordered table-hover " id="dataTables-cab" style="min-width: 1200px;">
+	<table class="table table-striped table-bordered table-hover " id="dataTables-cab">
 		<thead>
 			<tr>
 				<th>ID</th>							
