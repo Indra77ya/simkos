@@ -15,31 +15,14 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     margin: 10px;
-    padding: 15px 25px 15px 15px;
+    padding: 15px;
     transition: all 0.3s ease;
-    background: #fff;
-    width: auto !important;
-    min-width: 140px;
-    max-width: 100%;
-    display: inline-flex !important;
-    align-items: center;
-    white-space: nowrap;
+    background: #f5f5f5ff;
+    min-width: 280px;
 }
 .infobox:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-}
-.infobox > .infobox-icon {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    margin-right: 15px;
-    flex-shrink: 0;
-}
-.infobox > .infobox-data {
-    display: block !important;
-    min-width: 0;
-    text-align: left;
 }
 .infobox-blue { border-left: 4px solid #3983C2 !important; }
 .infobox-green { border-left: 4px solid #9ABC32 !important; }
