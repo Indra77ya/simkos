@@ -110,11 +110,11 @@
         <p>Silakan pilih portal masuk Anda</p>
 
         <div class="btn-group">
-            <a href="http://localhost/simkos/admin/" class="btn btn-admin">
+            <a href="https://simkos.hassapos.online/admin/" class="btn btn-admin">
                 Masuk sebagai <strong>Admin</strong>
             </a>
             
-            <a href="http://localhost/simkos/tenant/" class="btn btn-tenant">
+            <a href="https://simkos.hassapos.online/tenant/" class="btn btn-tenant">
                 Masuk sebagai <strong>Tenant</strong>
             </a>
         </div>
