@@ -2,11 +2,11 @@
 <br>
 <div class="row">
 	<div class="col-md-8"><div class="form-group">
-		<label for="role" class="col-sm-4 control-label">Lokasi</label>
+		<label for="role" class="col-sm-1 control-label">Lokasi</label>
 			<div class="col-sm-4">
 			<?	
 				if ($this->session->userdata('auth')->ROLE=="Superadmin"){
-					echo form_dropdown('lokasi',$lokasi,'','id="lokasi" class="form-control"');
+					echo form_dropdown('lokasi',$lokasi,'','id="lokasi" class="form-control" style="width: auto;"');
 				}else{
 					echo '<input type="hidden" name="lokasi" id ="lokasi" value="'.$lokasi->id.'"/>';
 					echo '<label  class="col-sm-4 control-label">'.$lokasi->lokasi.'</label>';
@@ -60,6 +60,21 @@
 			"bProcessing": true,
 			"bServerSide": true,
 			"iDisplayLength": 25,
+			"responsive": true,
+			"autoWidth": false,
+			"columnDefs": [
+				{ "width": "3%", "targets": 0 },
+				{ "width": "10%", "targets": 1 },
+				{ "width": "10%", "targets": 2 },
+				{ "width": "6%", "targets": 3 },
+				{ "width": "6%", "targets": 4 },
+				{ "width": "5%", "targets": 5 },
+				{ "width": "30%", "targets": 6 },
+				{ "width": "10%", "targets": 7 },
+				{ "width": "10%", "targets": 8 },
+				{ "width": "10%", "targets": 9 },
+				{ "width": "10%", "targets": 10 }
+			],
 			"fnServerParams": function ( aoData ) {
 				aoData.push( { "name": "idlokasi", "value": $('#lokasi').val() });
 			},
@@ -79,7 +94,23 @@
 			"sAjaxSource": "<?php echo base_url('kamar/json_data_pilih');?>"
 		});
 
-		
+		// Adjust dropdown width to fit longest option
+		if ($('#lokasi').length) {
+			var maxWidth = 0;
+			$('#lokasi option').each(function() {
+				var tempSpan = $('<span>').text($(this).text()).css({
+					'font-family': $('#lokasi').css('font-family'),
+					'font-size': $('#lokasi').css('font-size'),
+					'visibility': 'hidden',
+					'white-space': 'nowrap',
+					'position': 'absolute'
+				}).appendTo('body');
+				var width = tempSpan.width();
+				if (width > maxWidth) maxWidth = width;
+				tempSpan.remove();
+			});
+			$('#lokasi').css('width', (maxWidth + 30) + 'px'); // Add some padding
+		}
 
     });	
 

@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['port']     = 3307;
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
+$db['default']['port']     = 3306;
+$db['default']['username'] = 'simkos';
+$db['default']['password'] = 'Nkxh2CbcHXETFyix';
 $db['default']['database'] = 'simkos';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
@@ -64,6 +64,7 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
+
 
 
 /* End of file database.php */
