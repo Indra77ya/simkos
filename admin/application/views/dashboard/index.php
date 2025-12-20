@@ -18,7 +18,9 @@
     padding: 15px;
     transition: all 0.3s ease;
     background: #f5f5f5ff;
-    min-width: 280px;
+    min-width: 0;
+    width: auto;
+    height: auto;
 }
 .infobox:hover {
     transform: translateY(-3px);
