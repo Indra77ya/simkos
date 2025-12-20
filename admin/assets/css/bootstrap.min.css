@@ -6080,7 +6080,7 @@ button.close {
 
 @media (min-width: 768px) {
     .modal-dialog {
-        max-width: 1700px;
+        max-width: 1500px;
         margin: 30px auto;
     }
 
