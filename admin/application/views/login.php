@@ -109,7 +109,7 @@
 															<span class="lbl"> Ingat Saya</span>
 														</label>
 
-														<button type="button" class="width-35 pull-right btn btn-sm btn-primary" onclick="dologin()">
+														<button type="button" id="btn-login" class="width-35 pull-right btn btn-sm btn-primary" onclick="dologin()">
 															<i class="ace-icon fa fa-key"></i>
 															<span class="bigger-110">Masuk</span>
 														</button>
@@ -352,10 +352,13 @@
 			$('#formmsg').html('').fadeOut();
 			var username = $('#username').val();
 			var password = $('#password').val();
+			var $btn = $('#btn-login');
+			var originalContent = $btn.html();
 			
 			if (username=='' || password==''){
 				$('#formmsg').html('Username dan Password harus diisi.').fadeIn();
 			} else {
+				$btn.prop('disabled', true).html('<i class="ace-icon fa fa-spinner fa-spin"></i> <span class="bigger-110">Loading...</span>');
 				//alert("<?php echo base_url('/'); ?>");
 				$.ajax({
 					url: "<?php echo base_url('pengguna/dologin'); ?>",
@@ -368,11 +371,12 @@
 						if(data.response =="true"){							
 							window.location.replace('<?php echo base_url('/');?>');
 						} else {
+							$btn.prop('disabled', false).html(originalContent);
 							$('#formmsg').html('Username atau Password salah').fadeIn();
 						}
 					},
 					error: function(XMLHttpRequest, textStatus, errorThrown) {
-						
+						$btn.prop('disabled', false).html(originalContent);
 						alert('Terjadi kesalahan.<br />'+	textStatus + ' - ' + errorThrown );
 					},
 				});
