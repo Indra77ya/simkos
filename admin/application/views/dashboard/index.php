@@ -21,16 +21,14 @@
     min-width: 0;
     width: auto;
     height: auto;
-    display: flex;
-    flex-direction: column;
+    display: inline-flex;
     align-items: center;
-    text-align: center;
+    max-width: 100%;
 }
 .infobox > .infobox-data {
     flex: 1;
     min-width: 0;
-    margin-top: 10px;
-    width: 100%;
+    text-align: left;
 }
 .infobox:hover {
     transform: translateY(-3px);
