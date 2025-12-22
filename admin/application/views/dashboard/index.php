@@ -21,14 +21,19 @@
     min-width: 0;
     width: auto;
     height: auto;
-    display: inline-flex;
-    align-items: center;
-    max-width: 100%;
+    display: inline-table;
+    vertical-align: middle;
+}
+.infobox > .infobox-icon {
+    display: table-cell;
+    vertical-align: middle;
 }
 .infobox > .infobox-data {
-    flex: 1;
+    display: table-cell;
+    vertical-align: middle;
     min-width: 0;
     text-align: left;
+    padding-left: 8px;
 }
 .infobox:hover {
     transform: translateY(-3px);
