@@ -207,7 +207,7 @@
 	</div>
 </div>
 <div class="space-6"></div>		
-<div class="col-sm-12 infobox-container " id="mapdiv"></div>									
+<div class="col-sm-12 infobox-container infobox-row" id="mapdiv"></div>
 </div><!-- /.row -->
 <div class="hr hr32 hr-dotted"></div>
 
