@@ -14,26 +14,28 @@
     border: none !important;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    margin: 10px;
     padding: 15px;
     transition: all 0.3s ease;
     background: #f5f5f5ff;
-    min-width: 0;
-    width: auto;
+    min-width: 210px;
+    width: 18%;
     height: auto;
-    display: inline-table;
-    vertical-align: middle;
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
 }
 .infobox > .infobox-icon {
-    display: table-cell;
+    display: inline-block;
     vertical-align: middle;
+    width: 20%;
 }
 .infobox > .infobox-data {
-    display: table-cell;
+    display: inline-block;
     vertical-align: middle;
     min-width: 0;
     text-align: left;
     padding-left: 8px;
+    width: 75%;
 }
 .infobox:hover {
     transform: translateY(-3px);
