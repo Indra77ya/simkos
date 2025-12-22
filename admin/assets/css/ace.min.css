@@ -11905,7 +11905,7 @@ tr.detail-row>td {
 
 .infobox>.infobox-data>.infobox-data-number {
     display: block;
-    font-size: 12x;
+    font-size: 12px;
     margin: 2px 0 4px;
     position: relative;
     font-weight: bold;
