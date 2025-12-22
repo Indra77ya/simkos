@@ -1,5 +1,90 @@
 
 
+<style>
+/* Modern Dashboard Styles - Palette's Magic Touch */
+.infobox-container, .group, .user-profile {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #eaeaea;
+}
+.infobox-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+}
+.infobox {
+    border: none !important;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 15px;
+    transition: all 0.3s ease;
+    background: #f5f5f5ff;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    box-sizing: border-box;
+}
+.infobox-content {
+    white-space: nowrap;
+}
+.infobox > .infobox-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    padding-right: 10px;
+}
+.infobox > .infobox-data {
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 0;
+    text-align: left;
+    flex: 1;
+}
+.infobox:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+.infobox-blue { border-left: 4px solid #3983C2 !important; }
+.infobox-green { border-left: 4px solid #9ABC32 !important; }
+.infobox-red { border-left: 4px solid #D53F40 !important; }
+.infobox-grey { border-left: 4px solid #999 !important; }
+.infobox-dark { background: #34495e !important; color: #fff !important; }
+.infobox-dark .infobox-content { color: #ecf0f1 !important; }
+
+.accordion-style2 .accordion-header {
+    background: #fff !important;
+    border: none !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    padding: 15px 20px !important;
+    color: #444 !important;
+    font-weight: 600 !important;
+}
+.accordion-style2 .accordion-header:hover {
+    background: #f9f9f9 !important;
+    color: #438EB9 !important;
+}
+.table-bordered { border: none !important; }
+.table-bordered > thead > tr > th {
+    border: none !important;
+    border-bottom: 2px solid #eaeaea !important;
+    background: #f8f9fa !important;
+    color: #666 !important;
+}
+.table-bordered > tbody > tr > td {
+    border: none !important;
+    border-bottom: 1px solid #f1f1f1 !important;
+}
+.profile-picture img {
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+</style>
+
 <div class="row" >
 									<div id="user-profile-1" class="user-profile row">
 										<div class="col-xs-12 col-sm-3 center">
@@ -124,7 +209,7 @@
 	</div>
 </div>
 <div class="space-6"></div>		
-<div class="col-sm-12 infobox-container " id="mapdiv"></div>									
+<div class="col-sm-12 infobox-container infobox-row" id="mapdiv"></div>
 </div><!-- /.row -->
 <div class="hr hr32 hr-dotted"></div>
 
@@ -137,7 +222,7 @@ if ($statusData=="cabang"){
 		<br>
 		<div class="col-xs-2"></div>
 		<div class="col-xs-10  center">
-		<div class=" col-sm-10 infobox-container ">
+		<div class=" col-sm-10 infobox-container infobox-row">
 			<div class="infobox infobox-grey  infobox-dark">
 											<div class="infobox-chart">
 												<span class="sparkline" data-values="3,4,2,3,4,4,2,2"></span>
@@ -608,7 +693,7 @@ echo '<table  class="table table-bordered table-hover">';
 		?>
 		<div class="col-xs-2"></div>
 		<div class="col-xs-10  center">
-		<div class=" col-sm-10 infobox-container ">
+		<div class=" col-sm-10 infobox-container infobox-row">
 			<div class="infobox infobox-grey  infobox-dark">
 											<div class="infobox-chart">
 												<span class="sparkline" data-values="3,4,2,3,4,4,2,2"></span>

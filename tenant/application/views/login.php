@@ -143,7 +143,7 @@
 
 										<div class="toolbar clearfix">
 											<div>
-												<a href="https://simkos.hassapos.online" style="color: white;" >
+												<a href="http://localhost/simkos/" style="color: white;" >
 													<i class="ace-icon fa fa-arrow-left"></i>
 													Kembali
 												</a>
