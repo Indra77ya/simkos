@@ -10,15 +10,39 @@
     margin-bottom: 20px;
     border: 1px solid #eaeaea;
 }
+.infobox-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+}
 .infobox {
     border: none !important;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    margin: 10px;
     padding: 15px;
     transition: all 0.3s ease;
     background: #f5f5f5ff;
-    min-width: 280px;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    box-sizing: border-box;
+}
+.infobox-content {
+    white-space: nowrap;
+}
+.infobox > .infobox-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    padding-right: 10px;
+}
+.infobox > .infobox-data {
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 0;
+    text-align: left;
+    flex: 1;
 }
 .infobox:hover {
     transform: translateY(-3px);
@@ -185,7 +209,7 @@
 	</div>
 </div>
 <div class="space-6"></div>		
-<div class="col-sm-12 infobox-container " id="mapdiv"></div>									
+<div class="col-sm-12 infobox-container infobox-row" id="mapdiv"></div>
 </div><!-- /.row -->
 <div class="hr hr32 hr-dotted"></div>
 
@@ -198,7 +222,7 @@ if ($statusData=="cabang"){
 		<br>
 		<div class="col-xs-2"></div>
 		<div class="col-xs-10  center">
-		<div class=" col-sm-10 infobox-container ">
+		<div class=" col-sm-10 infobox-container infobox-row">
 			<div class="infobox infobox-grey  infobox-dark">
 											<div class="infobox-chart">
 												<span class="sparkline" data-values="3,4,2,3,4,4,2,2"></span>
@@ -669,7 +693,7 @@ echo '<table  class="table table-bordered table-hover">';
 		?>
 		<div class="col-xs-2"></div>
 		<div class="col-xs-10  center">
-		<div class=" col-sm-10 infobox-container ">
+		<div class=" col-sm-10 infobox-container infobox-row">
 			<div class="infobox infobox-grey  infobox-dark">
 											<div class="infobox-chart">
 												<span class="sparkline" data-values="3,4,2,3,4,4,2,2"></span>
