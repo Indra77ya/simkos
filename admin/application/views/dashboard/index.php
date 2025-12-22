@@ -10,6 +10,11 @@
     margin-bottom: 20px;
     border: 1px solid #eaeaea;
 }
+.infobox-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+}
 .infobox {
     border: none !important;
     border-radius: 8px;
@@ -18,24 +23,24 @@
     transition: all 0.3s ease;
     background: #f5f5f5ff;
     min-width: 210px;
-    width: 18%;
-    height: auto;
-    display: inline-block;
-    vertical-align: top;
+    flex: 1 0 calc(25% - 10px);
+    display: flex;
+    align-items: center;
     margin: 5px;
+    box-sizing: border-box;
 }
 .infobox > .infobox-icon {
     display: inline-block;
     vertical-align: middle;
-    width: 20%;
+    width: auto;
+    padding-right: 10px;
 }
 .infobox > .infobox-data {
     display: inline-block;
     vertical-align: middle;
     min-width: 0;
     text-align: left;
-    padding-left: 8px;
-    width: 75%;
+    flex: 1;
 }
 .infobox:hover {
     transform: translateY(-3px);
@@ -215,7 +220,7 @@ if ($statusData=="cabang"){
 		<br>
 		<div class="col-xs-2"></div>
 		<div class="col-xs-10  center">
-		<div class=" col-sm-10 infobox-container ">
+		<div class=" col-sm-10 infobox-container infobox-row">
 			<div class="infobox infobox-grey  infobox-dark">
 											<div class="infobox-chart">
 												<span class="sparkline" data-values="3,4,2,3,4,4,2,2"></span>
@@ -686,7 +691,7 @@ echo '<table  class="table table-bordered table-hover">';
 		?>
 		<div class="col-xs-2"></div>
 		<div class="col-xs-10  center">
-		<div class=" col-sm-10 infobox-container ">
+		<div class=" col-sm-10 infobox-container infobox-row">
 			<div class="infobox infobox-grey  infobox-dark">
 											<div class="infobox-chart">
 												<span class="sparkline" data-values="3,4,2,3,4,4,2,2"></span>
