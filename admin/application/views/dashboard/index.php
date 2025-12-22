@@ -22,12 +22,14 @@
     padding: 15px;
     transition: all 0.3s ease;
     background: #f5f5f5ff;
-    min-width: 210px;
-    flex: 1 0 calc(25% - 10px);
+    flex: 1 1 auto;
     display: flex;
     align-items: center;
     margin: 5px;
     box-sizing: border-box;
+}
+.infobox-content {
+    white-space: nowrap;
 }
 .infobox > .infobox-icon {
     display: inline-block;
