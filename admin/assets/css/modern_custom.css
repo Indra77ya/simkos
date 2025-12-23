@@ -40,7 +40,7 @@ body {
 }
 
 .ace-nav > li > a:hover, .ace-nav > li.open > a {
-    background-color: #34495e !important; /* Lighter blue on hover */
+    background-color: #1abc9c !important; /* Turquoise on hover */
     color: #ffffff !important;
 }
 
@@ -59,7 +59,7 @@ body {
 .navbar-nav > li:hover > a,
 .navbar-nav > li.open > a,
 .navbar-nav > li.active > a {
-    background-color: #34495e !important; /* Lighter blue on hover */
+    background-color: #1abc9c !important; /* Turquoise on hover */
     color: #ffffff !important;
 }
 
@@ -259,4 +259,28 @@ input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:f
 /* Login Page Tweaks (if visible here) */
 .login-layout {
     background-color: #2c3e50 !important;
+}
+
+/* Tooltip Fix (White text on dark background) */
+.tooltip-inner {
+    background-color: #2c3e50 !important;
+    color: #ffffff !important;
+    border-radius: 4px;
+    padding: 8px 12px;
+}
+
+.tooltip.top .tooltip-arrow {
+    border-top-color: #2c3e50 !important;
+}
+
+.tooltip.right .tooltip-arrow {
+    border-right-color: #2c3e50 !important;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #2c3e50 !important;
+}
+
+.tooltip.left .tooltip-arrow {
+    border-left-color: #2c3e50 !important;
 }
