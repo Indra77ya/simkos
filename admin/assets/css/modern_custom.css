@@ -40,7 +40,7 @@ body {
 }
 
 .ace-nav > li > a:hover, .ace-nav > li.open > a {
-    background-color: #34495e !important; /* Lighter blue on hover */
+    background-color: #1abc9c !important; /* Turquoise on hover */
     color: #ffffff !important;
 }
 
@@ -59,7 +59,7 @@ body {
 .navbar-nav > li:hover > a,
 .navbar-nav > li.open > a,
 .navbar-nav > li.active > a {
-    background-color: #34495e !important; /* Lighter blue on hover */
+    background-color: #1abc9c !important; /* Turquoise on hover */
     color: #ffffff !important;
 }
 
