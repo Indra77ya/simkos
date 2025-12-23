@@ -24,8 +24,16 @@ class dashboard extends MY_App {
 	}
 	public function roomMap()
 	{
-		$str = "select kamar.*,  (select lokasi from lokasi where id=kamar.idlokasi) NAMALOKASI from kamar where idlokasi = ".$this->input->post('lokasi')." order by labelkamar";
-		$query = $this->db->query($str)->result();
+		$lokasi = $this->input->post('lokasi');
+		if (empty($lokasi)) {
+			$respon['status'] = 'error';
+			$respon['errormsg'] = 'Lokasi belum dipilih';
+			echo json_encode($respon);
+			return;
+		}
+
+		$str = "select kamar.*,  (select lokasi from lokasi where id=kamar.idlokasi) NAMALOKASI from kamar where idlokasi = ? order by labelkamar";
+		$query = $this->db->query($str, array($lokasi))->result();
 		$i=1;
 		$html="";
 		$nama_m="";
