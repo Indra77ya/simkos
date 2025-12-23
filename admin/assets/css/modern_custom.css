@@ -132,11 +132,17 @@ body {
 .sidebar.h-sidebar .nav-list > li > .submenu > li.hover-show,
 .sidebar.h-sidebar .nav-list > li.hover > .submenu > li:first-child,
 .sidebar.h-sidebar .nav-list > li:hover > .submenu > li:first-child,
-.sidebar.h-sidebar .nav-list > li > .submenu > li:first-child {
+.sidebar.h-sidebar .nav-list > li > .submenu > li:first-child,
+.sidebar.h-sidebar .nav-list > li.hover > .submenu > li.hover-show {
     background-color: #2c3e50 !important;
     background-image: none !important;
     color: #fff !important;
     border-bottom: 1px solid #34495e !important;
+}
+
+/* Specific override for any light background that might be bleeding through */
+.sidebar.h-sidebar .nav-list > li.hover > .submenu {
+    background-color: #2c3e50 !important;
 }
 
 /* Ensure the text inside that header is white */
