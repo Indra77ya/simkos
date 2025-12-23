@@ -18,6 +18,7 @@
 
 		<!-- ace styles -->
 		<link rel="stylesheet" href="<?php echo base_url('assets/css/ace.min.css');?>" />
+		<link rel="stylesheet" href="<?php echo base_url('assets/css/modern_custom.css');?>" />
 
 		<!--[if lte IE 9]>
 			<link rel="stylesheet" href="<?php echo base_url('assets/css/ace-part2.min.css');?>" />
@@ -44,7 +45,7 @@
 						<div class="login-container">
 							<div class="center">
 								<h1>
-									<span class="white" id="id-text2"></span>
+									<span class="blue" id="id-text2"></span>
 
 <script>
   function ucapanSelamat() {
@@ -70,7 +71,7 @@
 </script>
 
 								</h1>
-								<h4 class="blue" id="id-company-text">&copy; SimKos</h4>
+								<h4 class="grey" id="id-company-text">&copy; SimKos</h4>
 							</div>
 
 							<div class="space-6"></div>
@@ -274,21 +275,6 @@
 									</div><!-- /.widget-body -->
 								</div><!-- /.signup-box -->
 							</div><!-- /.position-relative -->
-
-							<div class="navbar-fixed-top align-right">
-								<br />
-								&nbsp;
-								<a id="btn-login-dark" href="#">Dark</a>
-								&nbsp;
-								<span class="blue">/</span>
-								&nbsp;
-								<a id="btn-login-blur" href="#">Blur</a>
-								&nbsp;
-								<span class="blue">/</span>
-								&nbsp;
-								<a id="btn-login-light" href="#">Light</a>
-								&nbsp; &nbsp; &nbsp;
-							</div>
 						</div>
 					</div><!-- /.col -->
 				</div><!-- /.row -->

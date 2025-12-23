@@ -1,0 +1,544 @@
+
+/*
+   Modern Admin Theme Override
+   Created to overhaul the look & feel of the legacy Ace Admin
+*/
+
+:root {
+    --primary-color: #2563eb;       /* Modern Blue */
+    --primary-hover: #1d4ed8;       /* Darker Blue */
+    --secondary-color: #1e293b;     /* Dark Slate */
+    --accent-color: #3b82f6;        /* Lighter Blue */
+    --success-color: #10b981;       /* Emerald */
+    --warning-color: #f59e0b;       /* Amber */
+    --danger-color: #ef4444;        /* Red */
+    --bg-color: #f3f4f6;           /* Gray-100 */
+    --card-bg: #ffffff;
+    --text-primary: #1f2937;        /* Gray-800 */
+    --text-secondary: #6b7280;      /* Gray-500 */
+    --border-color: #e5e7eb;        /* Gray-200 */
+    --sidebar-width: 250px;
+    --header-height: 60px;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --radius: 8px;
+}
+
+/* Global Reset & Typography */
+body {
+    background-color: var(--bg-color) !important;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    color: var(--text-primary) !important;
+    font-size: 14px !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--primary-color);
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+/* Helper Classes */
+.text-muted { color: var(--text-secondary) !important; }
+.bg-white { background-color: white !important; }
+.rounded { border-radius: var(--radius) !important; }
+.shadow { box-shadow: var(--shadow-md) !important; }
+
+/* Navbar Overrides */
+.navbar {
+    background: #ffffff !important;
+    box-shadow: var(--shadow-sm) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    height: var(--header-height);
+    margin-bottom: 0;
+}
+
+.navbar-default .navbar-brand {
+    color: var(--primary-color) !important;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    padding-top: 15px;
+}
+
+.navbar .navbar-nav > li > a {
+    color: var(--text-secondary) !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navbar .navbar-nav > li > a:hover,
+.navbar .navbar-nav > li.open > a {
+    background-color: #f9fafb !important;
+    color: var(--primary-color) !important;
+}
+
+/* Sidebar Overrides */
+.sidebar {
+    background-color: #ffffff !important;
+    border-right: 1px solid var(--border-color) !important;
+    box-shadow: none !important;
+    margin-top: 0 !important;
+    padding-top: 10px;
+}
+
+.sidebar.h-sidebar {
+    margin-top: 0 !important; /* Fix for horizontal layout issues if any */
+}
+
+.nav-list > li > a {
+    background-color: transparent !important;
+    color: var(--text-secondary) !important;
+    font-size: 14px;
+    padding: 12px 16px;
+    border: none !important;
+    font-weight: 500;
+}
+
+.nav-list > li > a:hover {
+    background-color: #f3f4f6 !important;
+    color: var(--primary-color) !important;
+}
+
+.nav-list > li.active > a {
+    background-color: #eff6ff !important; /* Blue-50 */
+    color: var(--primary-color) !important;
+    font-weight: 600;
+}
+
+.nav-list > li.active:after {
+    display: none !important; /* Remove the Ace triangle */
+}
+
+.nav-list > li .submenu {
+    background-color: #f9fafb !important;
+    border-top: 1px solid var(--border-color);
+}
+
+.nav-list > li .submenu > li > a {
+    padding-left: 40px;
+    font-size: 13px;
+}
+
+.sidebar-shortcuts {
+    background-color: transparent !important;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 10px;
+}
+
+.sidebar-shortcuts .btn {
+    border-radius: 6px !important;
+    margin: 2px !important;
+    opacity: 0.9;
+}
+
+/* Main Content */
+.main-content {
+    background-color: var(--bg-color);
+    min-height: 100vh;
+}
+
+.page-content {
+    background-color: var(--bg-color) !important;
+    padding: 24px !important;
+}
+
+.page-header {
+    border-bottom: none !important;
+    padding-bottom: 20px !important;
+    padding-top: 0 !important;
+}
+
+.page-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* Cards & Infoboxes - Total Redesign */
+.infobox-container {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between cards */
+}
+
+.infobox {
+    background: white !important;
+    border-radius: var(--radius) !important;
+    box-shadow: var(--shadow-sm) !important;
+    border: 1px solid var(--border-color) !important;
+    margin: 0 !important; /* Reset margins to rely on gap */
+    height: auto !important;
+    width: auto !important;
+    flex: 1 1 200px; /* Flexbox grow, shrink, basis */
+    padding: 24px !important;
+    display: flex !important;
+    align-items: center;
+}
+
+.infobox-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 16px;
+    margin-right: 20px;
+    background-color: #eff6ff; /* Default light blue */
+}
+
+.infobox-icon i {
+    font-size: 28px !important;
+    color: var(--primary-color) !important;
+    background: transparent !important;
+    padding: 0 !important;
+    width: auto !important;
+}
+
+.infobox-data {
+    padding-left: 0 !important;
+    text-align: left !important;
+    min-width: 0;
+}
+
+.infobox-data-number {
+    font-size: 28px !important;
+    font-weight: 800 !important;
+    color: var(--text-primary) !important;
+    display: block;
+    line-height: 1.2;
+}
+
+.infobox-content {
+    color: var(--text-secondary) !important;
+    font-size: 13px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+/* Specific Colors for Infoboxes */
+.infobox-blue .infobox-icon { background-color: #eff6ff; }
+.infobox-blue .infobox-icon i { color: #3b82f6 !important; }
+
+.infobox-green .infobox-icon { background-color: #ecfdf5; }
+.infobox-green .infobox-icon i { color: #10b981 !important; }
+
+.infobox-red .infobox-icon { background-color: #fef2f2; }
+.infobox-red .infobox-icon i { color: #ef4444 !important; }
+
+.infobox-grey .infobox-icon { background-color: #f3f4f6; }
+.infobox-grey .infobox-icon i { color: #6b7280 !important; }
+
+.infobox-dark {
+    background: var(--secondary-color) !important;
+    color: white !important;
+}
+.infobox-dark .infobox-icon { background-color: rgba(255,255,255,0.1); }
+.infobox-dark .infobox-icon i { color: white !important; }
+.infobox-dark .infobox-content, .infobox-dark .infobox-data-number {
+    color: white !important;
+}
+
+/* User Profile Widget */
+.user-profile {
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    padding: 30px;
+    border: 1px solid var(--border-color);
+}
+
+.profile-picture img {
+    border-radius: 50% !important;
+    border: 4px solid #f3f4f6 !important;
+    box-shadow: none !important;
+}
+
+.profile-user-info-striped {
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.profile-user-info-striped .profile-info-name {
+    background-color: #f9fafb !important;
+    color: var(--text-secondary) !important;
+    border-right: 1px solid var(--border-color) !important;
+    border-top: 1px solid var(--border-color) !important;
+    font-weight: 600;
+    padding: 12px 16px;
+}
+
+.profile-user-info-striped .profile-info-value {
+    border-top: 1px solid var(--border-color) !important;
+    padding: 12px 16px;
+}
+
+/* Accordions */
+.accordion-style2 .accordion-header {
+    background-color: white !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius) !important;
+    margin-top: 12px !important;
+    padding: 16px 24px !important;
+    font-weight: 600 !important;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s;
+    font-size: 15px;
+}
+
+.accordion-style2 .accordion-header:hover {
+    background-color: #f9fafb !important;
+    color: var(--primary-color) !important;
+    text-decoration: none;
+}
+
+.accordion-style2 .accordion-header.ui-state-active {
+    background-color: #eff6ff !important;
+    color: var(--primary-color) !important;
+    border-color: #bfdbfe !important;
+}
+
+.accordion-style2 .group > div {
+    border: 1px solid var(--border-color) !important;
+    border-top: none !important;
+    padding: 24px !important;
+    background: white;
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+}
+
+/* Tables */
+.table {
+    margin-bottom: 0;
+}
+
+.table-bordered {
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.table > thead > tr > th {
+    background-color: #f9fafb !important;
+    color: var(--text-secondary) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    padding: 14px 18px !important;
+    border-bottom: 2px solid var(--border-color) !important;
+}
+
+.table > tbody > tr > td {
+    padding: 16px 18px !important;
+    vertical-align: middle;
+    color: var(--text-primary);
+    border-top: 1px solid var(--border-color) !important;
+    font-size: 14px;
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: #f9fafb !important;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 6px !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    font-weight: 600;
+    transition: all 0.2s;
+    font-size: 14px;
+}
+
+.btn-primary, .btn-info {
+    background-color: var(--primary-color) !important;
+}
+
+.btn-success {
+    background-color: var(--success-color) !important;
+}
+
+.btn-danger {
+    background-color: var(--danger-color) !important;
+}
+
+.btn-warning {
+    background-color: var(--warning-color) !important;
+}
+
+.btn:hover {
+    filter: brightness(90%);
+    transform: translateY(-1px);
+}
+
+/* Inputs */
+.form-control, select, textarea {
+    border-radius: 6px !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: none !important;
+    padding: 10px 14px !important;
+    height: 42px !important;
+    font-size: 14px;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
+}
+
+/* Badges */
+.badge {
+    border-radius: 6px !important;
+    padding: 6px 10px !important;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.badge-info { background-color: #eff6ff !important; color: #1d4ed8 !important; }
+.badge-success { background-color: #ecfdf5 !important; color: #047857 !important; }
+.badge-warning { background-color: #fffbeb !important; color: #b45309 !important; }
+.badge-danger { background-color: #fef2f2 !important; color: #b91c1c !important; }
+
+/* Dashboard Specific Overrides */
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.widget-header {
+    background: transparent !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    padding-left: 0 !important;
+}
+
+.widget-title {
+    color: var(--text-primary) !important;
+    font-weight: 700;
+}
+
+/* Footer */
+.footer .footer-inner .footer-content {
+    background: white !important;
+    border-top: 1px solid var(--border-color) !important;
+    padding: 24px;
+    color: var(--text-secondary);
+}
+
+/* LOGIN PAGE OVERRIDES */
+body.login-layout {
+    background-color: #f3f4f6 !important;
+}
+
+.login-layout .main-content {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.login-container {
+    width: 400px !important;
+    margin: 0 auto;
+}
+
+.login-layout .widget-box {
+    background-color: #ffffff !important;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg) !important;
+    border: none !important;
+    padding: 10px;
+}
+
+.login-layout .widget-body {
+    background-color: transparent !important;
+}
+
+.login-layout .widget-main {
+    padding: 30px 25px !important;
+    background: transparent !important;
+}
+
+.login-layout h1 {
+    font-size: 28px !important;
+    color: var(--primary-color) !important;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.login-layout h4.header {
+    font-size: 18px !important;
+    margin-bottom: 25px !important;
+    border-bottom: none !important;
+    color: var(--text-secondary) !important;
+    font-weight: 500 !important;
+}
+
+.login-layout input.form-control {
+    background-color: #f9fafb !important;
+    border: 1px solid #e5e7eb !important;
+    transition: all 0.2s;
+}
+
+.login-layout input.form-control:focus {
+    background-color: #ffffff !important;
+    border-color: var(--primary-color) !important;
+}
+
+.login-layout .btn-primary {
+    width: 100%;
+    margin-top: 15px;
+    height: 44px;
+    font-size: 16px;
+}
+
+.login-layout .toolbar {
+    background: #f9fafb !important;
+    border-top: 1px solid var(--border-color) !important;
+    border-radius: 0 0 12px 12px;
+    padding: 15px !important;
+}
+
+.login-layout .toolbar > div {
+    width: 100%;
+    text-align: center;
+}
+
+.login-layout .toolbar a {
+    color: var(--primary-color) !important;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.login-layout .toolbar a:hover {
+    color: var(--secondary-color) !important;
+}
+
+.login-layout .ace-icon {
+    color: var(--text-secondary) !important;
+}
+
+/* Hide the old background selectors if not needed or style them better */
+.navbar-fixed-top.align-right {
+    display: none;
+}
