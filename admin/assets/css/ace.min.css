@@ -10537,7 +10537,7 @@ tr.detail-row>td {
     padding: 0;
     box-shadow: none;
     margin: 3px 0;
-    border: 1px solid #CCC
+    border: 0px solid #CCC
 }
 
 @media only screen and (max-width: 767px) {
