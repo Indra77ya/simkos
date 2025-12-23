@@ -129,6 +129,7 @@ body {
 }
 
 /* The header text that appears in h-sidebar dropdowns */
+.sidebar.h-sidebar .nav-list > li > .submenu > li.hover-show,
 .sidebar.h-sidebar .nav-list > li.hover > .submenu > li:first-child,
 .sidebar.h-sidebar .nav-list > li:hover > .submenu > li:first-child {
     background-color: #34495e !important; /* Slightly lighter header */
@@ -137,11 +138,19 @@ body {
 }
 
 /* Ensure the text inside that header is white */
+.sidebar.h-sidebar .nav-list > li > .submenu > li.hover-show > a,
+.sidebar.h-sidebar .nav-list > li > .submenu > li.hover-show > span,
 .sidebar.h-sidebar .nav-list > li.hover > .submenu > li:first-child > a,
 .sidebar.h-sidebar .nav-list > li.hover > .submenu > li.hover-show > a {
     color: #fff !important;
     background-color: transparent !important;
     font-weight: bold;
+}
+
+/* Fix the Triangle Arrow on top of the dropdown */
+.sidebar.h-sidebar .nav-list > li > .submenu:before,
+.sidebar.h-sidebar .nav-list > li > .submenu:after {
+    border-bottom-color: #2c3e50 !important;
 }
 
 /* Sidebar Shortcuts */
