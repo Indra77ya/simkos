@@ -20,38 +20,38 @@ body {
 
 /* 2. Navbar (Top Bar) */
 .navbar {
-    background: #ffffff !important;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05) !important;
-    border-bottom: 1px solid #e0e0e0;
+    background: #2c3e50 !important; /* Midnight Blue */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+    border-bottom: none !important;
 }
 
 .navbar .navbar-brand {
-    color: #2c3e50 !important;
+    color: #ffffff !important;
     font-weight: 600;
 }
 
 .ace-nav > li {
-    border-left: 1px solid #f0f0f0 !important;
+    border-left: 1px solid #34495e !important; /* Separators for dark theme */
 }
 
 .ace-nav > li > a {
     background-color: transparent !important;
-    color: #555 !important;
+    color: #ffffff !important; /* White text */
 }
 
 .ace-nav > li > a:hover, .ace-nav > li.open > a {
-    background-color: #f8f9fa !important;
-    color: #2c3e50 !important;
+    background-color: #34495e !important; /* Lighter blue on hover */
+    color: #ffffff !important;
 }
 
 .user-info {
-    color: #555 !important;
+    color: #ffffff !important;
 }
 
 /* Navbar Menu Items (Left side) */
 .navbar-nav > li > a {
     background-color: transparent !important;
-    color: #555 !important;
+    color: #ffffff !important;
     text-shadow: none !important;
 }
 
@@ -59,19 +59,19 @@ body {
 .navbar-nav > li:hover > a,
 .navbar-nav > li.open > a,
 .navbar-nav > li.active > a {
-    background-color: #f8f9fa !important;
-    color: #2c3e50 !important;
+    background-color: #34495e !important; /* Lighter blue on hover */
+    color: #ffffff !important;
 }
 
 .navbar-nav > li > a > .ace-icon {
-    color: #555 !important;
+    color: #ffffff !important;
 }
 
 .navbar-nav > li > a:hover > .ace-icon,
 .navbar-nav > li:hover > a > .ace-icon,
 .navbar-nav > li.open > a > .ace-icon,
 .navbar-nav > li.active > a > .ace-icon {
-    color: #2c3e50 !important;
+    color: #ffffff !important;
 }
 
 /* 3. Sidebar */
