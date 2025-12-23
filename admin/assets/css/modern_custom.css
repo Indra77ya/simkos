@@ -1,232 +1,179 @@
 
 /*
-   Modern Admin Theme Override (Refined Lite Version)
-   Balances modern aesthetics with compact, information-dense layout.
+   SimKos Minimal Polish Theme
+   Goal: Freshen up the UI without changing the core Ace Admin identity.
+   Focus: Readability, Flat Design, Spacing.
 */
 
-:root {
-    --primary-color: #3b82f6;       /* Standard Blue */
-    --primary-hover: #2563eb;
-    --secondary-color: #334155;     /* Dark Slate Gray */
-    --text-primary: #1e293b;
-    --text-secondary: #64748b;
-    --bg-color: #f1f5f9;            /* Lighter Gray */
-    --border-color: #e2e8f0;
-    --card-bg: #ffffff;
-    --radius: 6px;                  /* Slightly smaller radius */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-}
-
-/* Global Typography */
+/* 1. Typography & Global Readability */
 body {
-    background-color: var(--bg-color) !important;
-    font-family: 'Open Sans', 'Segoe UI', sans-serif !important;
-    font-size: 13px !important; /* Back to 13px for density */
-    color: var(--text-primary) !important;
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    color: #393939 !important;
+    background-color: #f2f2f2 !important; /* Slightly cleaner gray */
 }
 
-a { color: var(--primary-color); }
-a:hover { color: var(--primary-hover); text-decoration: none; }
+/* 2. Flatten UI Elements (Remove 3D gradients/bevels) */
 
-/* Navbar - Keep it clean but white */
-.navbar {
-    background: #ffffff !important;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
-    border-bottom: 1px solid var(--border-color) !important;
-}
-.navbar-default .navbar-brand {
-    color: var(--primary-color) !important;
-    font-weight: 700;
-}
-
-/* Sidebar - Revert to Dark Theme (Classic Ace Look) */
-.sidebar {
-    background-color: #2e3b4e !important; /* Dark Blue-Gray */
-    border-right: none !important;
-}
-
-.nav-list > li > a {
-    background-color: transparent !important;
-    color: #cbd5e1 !important; /* Light Gray Text */
-    border-bottom: 1px solid rgba(255,255,255,0.05) !important;
-}
-
-.nav-list > li > a:hover {
-    background-color: rgba(255,255,255,0.05) !important;
-    color: #ffffff !important;
-}
-
-.nav-list > li.active > a {
-    background-color: var(--primary-color) !important;
-    color: white !important;
-    font-weight: 600;
-}
-
-.nav-list > li.active:after {
-    border-right-color: var(--bg-color) !important; /* Blend with content bg */
-}
-
-/* Submenus */
-.nav-list > li .submenu {
-    background-color: #1e293b !important; /* Darker background */
-    border-top: none;
-}
-.nav-list > li .submenu > li > a {
-    color: #94a3b8 !important;
-}
-.nav-list > li .submenu > li > a:hover {
-    color: #fff !important;
-    background: transparent !important;
-}
-
-/* Infoboxes - Classic "Left Border" Style Restored but Cleaner */
-.infobox-container {
-    padding: 0 !important;
-    background: transparent !important;
-    border: none !important;
+/* Buttons: Flat & Clean */
+.btn {
     box-shadow: none !important;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+    background-image: none !important;
+    border: none !important;
+    border-radius: 2px !important; /* Slight rounding, not pill */
+    text-shadow: none !important;
+    font-weight: 500 !important;
+    transition: background-color 0.2s ease;
 }
 
+.btn-primary { background-color: #438EB9 !important; }
+.btn-primary:hover { background-color: #307ecc !important; }
+
+.btn-info { background-color: #6fb3e0 !important; }
+.btn-success { background-color: #87b87f !important; }
+.btn-danger { background-color: #d15b47 !important; }
+.btn-warning { background-color: #ffb752 !important; }
+
+/* Infoboxes: Flat, no gradients, clean layout */
 .infobox {
-    background: white !important;
-    border: 1px solid var(--border-color) !important;
-    border-radius: 4px !important;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
-    margin: 0 !important;
-    padding: 15px !important;
-    flex: 1 1 200px;
-    height: auto !important;
-    display: flex !important;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08) !important;
+    border: 1px solid #e8e8e8 !important;
+    background: #fff !important;
+    border-radius: 2px !important;
+    margin-bottom: 5px !important;
 }
 
-/* Left borders for status indication */
-.infobox-blue { border-left: 4px solid #3b82f6 !important; }
-.infobox-green { border-left: 4px solid #10b981 !important; }
-.infobox-red { border-left: 4px solid #ef4444 !important; }
-.infobox-grey { border-left: 4px solid #64748b !important; }
+/* Keep the colored left borders as they are useful indicators, but make them solid */
+.infobox-blue { border-left: 4px solid #6fb3e0 !important; }
+.infobox-green { border-left: 4px solid #87b87f !important; }
+.infobox-red { border-left: 4px solid #d15b47 !important; }
+.infobox-grey { border-left: 4px solid #999 !important; }
+.infobox-dark { background-color: #404040 !important; color: #fff !important; }
 
-/* Icons - Simpler, no background box */
 .infobox-icon {
-    background: transparent !important;
-    width: 40px !important;
-    height: 40px !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10px;
+    background: transparent !important; /* Remove colored background box */
 }
 .infobox-icon i {
-    font-size: 28px !important;
+    background: transparent !important;
+    color: inherit !important;
+    opacity: 0.9;
 }
-.infobox-blue .infobox-icon i { color: #3b82f6 !important; }
-.infobox-green .infobox-icon i { color: #10b981 !important; }
-.infobox-red .infobox-icon i { color: #ef4444 !important; }
-.infobox-grey .infobox-icon i { color: #64748b !important; }
+/* Explicit icon colors */
+.infobox-blue .infobox-icon i { color: #6fb3e0 !important; }
+.infobox-green .infobox-icon i { color: #87b87f !important; }
+.infobox-red .infobox-icon i { color: #d15b47 !important; }
 
 .infobox-data-number {
     font-size: 20px !important;
-    font-weight: 700;
-    color: var(--text-primary);
+    color: #333 !important;
+    text-shadow: none !important;
 }
 .infobox-content {
-    color: var(--text-secondary);
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 600;
+    color: #777 !important;
+    font-size: 12px !important;
 }
 
-.infobox-dark {
-    background: var(--secondary-color) !important;
-    border: none !important;
-    color: white !important;
-}
-.infobox-dark .infobox-content, .infobox-dark .infobox-data-number {
-    color: white !important;
-}
-.infobox-dark .infobox-icon i { color: white !important; opacity: 0.8; }
-
-
-/* Tables - Increased Density */
+/* 3. Tables: Breathing Room */
 .table-bordered {
-    border: 1px solid var(--border-color) !important;
-    border-radius: 4px;
+    border: 1px solid #e0e0e0 !important;
+    background: #fff;
 }
+
 .table > thead > tr > th {
-    background-color: #f8fafc !important;
-    color: var(--text-secondary);
-    font-weight: 600;
-    font-size: 11px;
-    text-transform: uppercase;
-    padding: 10px 12px !important;
-    border-bottom: 2px solid var(--border-color) !important;
+    background-image: none !important; /* Remove gradient */
+    background-color: #f5f5f5 !important;
+    color: #555 !important;
+    font-weight: 600 !important;
+    padding: 10px 12px !important; /* More padding */
+    border-bottom: 2px solid #e0e0e0 !important;
 }
+
 .table > tbody > tr > td {
-    padding: 8px 12px !important; /* Reduced padding */
-    vertical-align: middle;
-    font-size: 13px;
-    border-top: 1px solid var(--border-color) !important;
+    padding: 10px 12px !important; /* More padding */
+    vertical-align: middle !important;
+    border-color: #f2f2f2 !important;
 }
 
-/* User Profile */
-.user-profile {
-    background: white;
-    padding: 20px;
-    border-radius: var(--radius);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+.table-hover > tbody > tr:hover > td {
+    background-color: #f9f9f9 !important;
 }
 
-/* Buttons - Slightly smaller */
-.btn {
-    padding: 6px 12px !important;
-    font-size: 13px;
-    border-radius: 4px !important;
-    box-shadow: none !important;
-    border: none !important;
+/* 4. Dashboard Widgets & Accordions */
+.widget-box {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+    border: 1px solid #e5e5e5 !important;
+    border-radius: 3px !important;
+    background: #fff !important;
 }
 
-/* Login Page - Modern but Compact */
-body.login-layout {
-    background-color: #f0f2f5 !important; /* Neutral gray */
+.accordion-style2 .accordion-header {
+    background: #fff !important;
+    border: 1px solid #e8e8e8 !important;
+    color: #444 !important;
+    font-weight: 500 !important;
+    padding: 12px 15px !important;
+    transition: all 0.2s;
+}
+
+.accordion-style2 .accordion-header:hover {
+    background-color: #fbfbfb !important;
+    color: #438EB9 !important;
+}
+
+.accordion-style2 .accordion-header.ui-state-active {
+    background-color: #f0f7fd !important; /* Very light blue */
+    border-color: #c5d0dc !important;
+    color: #438EB9 !important;
+}
+
+/* 5. Navbar & Sidebar - Minimal Tweaks */
+/* Just remove text-shadows and gradients to make it look newer */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08) !important;
+}
+.sidebar {
+    box-shadow: 2px 0 4px rgba(0,0,0,0.05) !important;
+}
+.nav-list > li > a {
+    /* Keep original colors but remove noise */
+    text-shadow: none !important;
+}
+
+/* 6. Login Page - Clean & Center */
+.login-layout {
+    background-color: #e4e6e9 !important;
+}
+.login-layout .main-content {
+    padding-top: 60px;
 }
 .login-layout .widget-box {
     background-color: #fff !important;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
-    border: 1px solid #e5e7eb !important;
-    padding: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+    border: none !important;
+    border-radius: 4px !important;
 }
 .login-layout .widget-main {
-    padding: 25px !important;
-}
-.login-layout .toolbar {
-    background: #f8fafc !important;
-    border-top: 1px solid #e2e8f0 !important;
-    padding: 10px !important;
-    border-radius: 0 0 8px 8px;
-}
-.login-layout h1 {
-    font-size: 24px !important;
-    color: var(--primary-color) !important;
-    font-weight: 700;
-}
-.login-layout h4.header {
-    font-size: 16px !important;
-    color: var(--text-secondary) !important;
-    margin-bottom: 20px !important;
+    padding: 30px !important;
 }
 .login-layout input.form-control {
-    background: #f8fafc !important;
-    border: 1px solid #cbd5e1 !important;
+    background: #fdfdfd !important;
+    border: 1px solid #d5d5d5 !important;
+    box-shadow: none !important;
+    height: 38px !important;
 }
 .login-layout input.form-control:focus {
+    border-color: #f59942 !important; /* Ace Orange hint */
     background: #fff !important;
-    border-color: var(--primary-color) !important;
 }
-.navbar-fixed-top.align-right { display: none; }
+.login-layout .toolbar {
+    background: #f7f7f7 !important;
+    border-top: 1px solid #eee !important;
+}
+
+/* Utility */
+.badge {
+    text-shadow: none !important;
+    font-weight: normal !important;
+    border-radius: 2px !important;
+}
