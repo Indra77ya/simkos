@@ -24,8 +24,16 @@ class dashboard extends MY_App {
 	}
 	public function roomMap()
 	{
-		$str = "select kamar.*,  (select lokasi from lokasi where id=kamar.idlokasi) NAMALOKASI from kamar where idlokasi = ".$this->input->post('lokasi')." order by labelkamar";
-		$query = $this->db->query($str)->result();
+		$lokasi = $this->input->post('lokasi');
+		if (empty($lokasi)) {
+			$respon['status'] = 'error';
+			$respon['errormsg'] = 'Lokasi belum dipilih';
+			echo json_encode($respon);
+			return;
+		}
+
+		$str = "select kamar.*,  (select lokasi from lokasi where id=kamar.idlokasi) NAMALOKASI from kamar where idlokasi = ? order by labelkamar";
+		$query = $this->db->query($str, array($lokasi))->result();
 		$i=1;
 		$html="";
 		$nama_m="";
@@ -33,14 +41,17 @@ class dashboard extends MY_App {
 		$interval_m="";
 		$badge="";
 		foreach($query as $row){
-			$rsterisi = $this->db->query("select terisi from cekkamar where idkamar=".$row->IDKAMAR)->row();
-			$color=($rsterisi->terisi<=0?"infobox-grey":"infobox-blue");
-			$ava=($rsterisi->terisi<=0?1:0);
-			if ($rsterisi->terisi >0){
+			$rsterisi = $this->db->query("select terisi from cekkamar where idkamar= ?", array($row->IDKAMAR))->row();
+
+			$terisi_val = ($rsterisi) ? $rsterisi->terisi : 0;
+
+			$color=($terisi_val<=0?"infobox-grey":"infobox-blue");
+			$ava=($terisi_val<=0?1:0);
+			if ($terisi_val >0){
 				//daily
 				
-				$strd="select * from daftar_sewa_harian where idkamar=".$row->IDKAMAR." and checkout=0";				
-				$rsdaily = $this->db->query($strd)->result();				
+				$strd="select * from daftar_sewa_harian where idkamar= ? and checkout=0";
+				$rsdaily = $this->db->query($strd, array($row->IDKAMAR))->result();
 					foreach($rsdaily as $rowd){						
 						$nama_d=explode(" ",$rowd->nama);
 						$dd_mulai=date('d', strtotime($rowd->tglCek_in));
@@ -54,8 +65,8 @@ class dashboard extends MY_App {
 					}
 				
 				//weekly
-				$strw="select * from daftar_sewa_mingguan where idkamar=".$row->IDKAMAR." and checkout=0";				
-				$rsweekly = $this->db->query($strw)->result();				
+				$strw="select * from daftar_sewa_mingguan where idkamar= ? and checkout=0";
+				$rsweekly = $this->db->query($strw, array($row->IDKAMAR))->result();
 					foreach($rsweekly as $roww){						
 						$nama_w=explode(" ",$roww->nama);
 						$dd_mulai=date('d', strtotime($roww->tglMulai));
@@ -68,8 +79,8 @@ class dashboard extends MY_App {
 					$interval_m.=$interval->format("%d")." hari<br/>";
 					}
 				//monthly
-				$strm="select * from pendaftaran where idkamar=".$row->IDKAMAR." and checkout=0";				
-				$rsmonthly = $this->db->query($strm)->result();		
+				$strm="select * from pendaftaran where idkamar= ? and checkout=0";
+				$rsmonthly = $this->db->query($strm, array($row->IDKAMAR))->result();
 				$ymd_jatuhtempo="";
 					foreach($rsmonthly as $rowm){
 						$rspenghuni = $this->db->query("select nama from anak_kost where idanakkost=".$rowm->IDANAKKOST)->row();
@@ -95,8 +106,8 @@ class dashboard extends MY_App {
 				
 				
 				//yearly
-				$strt="select * from pendaftaran_tahunan where idkamar=".$row->IDKAMAR." and checkout=0";				
-				$rsyearly = $this->db->query($strt)->result();				
+				$strt="select * from pendaftaran_tahunan where idkamar= ? and checkout=0";
+				$rsyearly = $this->db->query($strt, array($row->IDKAMAR))->result();
 					foreach($rsyearly as $rowt){
 						$rspenghuni = $this->db->query("select nama from anak_kost where idanakkost=".$rowt->IDANAKKOST)->row();
 						$nama_t=explode(" ",$rspenghuni->nama);
