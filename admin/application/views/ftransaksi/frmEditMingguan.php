@@ -32,7 +32,7 @@
 <div class="row">
 	<div class="col-md-8">
 		<div class="form-group"><label  class="col-sm-4 control-label">Kamar*</label>
-			<div class="col-sm-8 "><?=form_input(array("name"=>"bln_lblkamar","id"=>"bln_lblkamar","class"=>"form-control", "value"=>$resKamar->LABELKAMAR, "readonly"=>true));?>
+			<div class="col-sm-6 "><?=form_input(array("name"=>"bln_lblkamar","id"=>"bln_lblkamar","class"=>"form-control", "value"=>$resKamar->LABELKAMAR, "readonly"=>true));?>
 			<label  style="text-align:left">Gunakan Form Pindah kamar untuk ubah kamar</label>
 			<input type="hidden" name="mgg_idkamar" id="mgg_idkamar"  size="20"  value="<?php echo $resKamar->IDKAMAR?>"/>
 			

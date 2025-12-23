@@ -33,7 +33,7 @@
 <div class="row">
 	<div class="col-md-8">
 		<div class="form-group"><label  class="col-sm-4 control-label">Kamar*</label>
-			<div class="col-md-8 form-inline"><?=form_input(array("name"=>"thn_lblkamar","id"=>"thn_lblkamar","class"=>"form-control"));?>
+			<div class="col-md-6 form-inline"><?=form_input(array("name"=>"thn_lblkamar","id"=>"thn_lblkamar","class"=>"form-control"));?>
 			<input type="hidden" name="thn_idkamar" id="thn_idkamar"   />			
 			&nbsp;
 			<? echo '<a href="javascript:void(0)" id="btn_thn_pilihkamar" class="btn btn-purple btn-sm inline" >Pilih Kamar</a>'; ?>
