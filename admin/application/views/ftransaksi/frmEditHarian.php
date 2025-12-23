@@ -96,6 +96,7 @@
 <div class="widget-header">
 	<h4 class="widget-title">Data Pribadi</h4>
 </div><!-- widget-header -->
+<br>
 <div class="row">
 	<div class="col-md-8">
 		<div class="form-group"><label class="col-sm-4 control-label">Nama Lengkap*</label>
