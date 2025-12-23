@@ -48,6 +48,32 @@ body {
     color: #555 !important;
 }
 
+/* Navbar Menu Items (Left side) */
+.navbar-nav > li > a {
+    background-color: transparent !important;
+    color: #555 !important;
+    text-shadow: none !important;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-nav > li:hover > a,
+.navbar-nav > li.open > a,
+.navbar-nav > li.active > a {
+    background-color: #f8f9fa !important;
+    color: #2c3e50 !important;
+}
+
+.navbar-nav > li > a > .ace-icon {
+    color: #555 !important;
+}
+
+.navbar-nav > li > a:hover > .ace-icon,
+.navbar-nav > li:hover > a > .ace-icon,
+.navbar-nav > li.open > a > .ace-icon,
+.navbar-nav > li.active > a > .ace-icon {
+    color: #2c3e50 !important;
+}
+
 /* 3. Sidebar */
 .sidebar {
     background-color: #2c3e50 !important;
