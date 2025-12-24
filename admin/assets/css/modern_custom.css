@@ -1,0 +1,265 @@
+/* Modern Custom Theme for SimKos (Ace Admin Overrides) */
+/* Style: Flat Design (Modern) */
+/* Colors: Original Ace Admin (Blue/White/Grey) */
+
+/* 1. Typography & General Layout */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+body, button, input, select, textarea, .page-header h1 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+body {
+    background-color: #ffffff !important; /* Original White */
+    font-size: 14px;
+    color: #393939; /* Original Text Color */
+}
+
+/* Remove Text Shadows (Flat Look) */
+.ace-nav > li > a, .sidebar-shortcuts .btn, .btn, .navbar-brand, .sidebar .nav-list > li > a {
+    text-shadow: none !important;
+}
+
+/* 2. Navbar (Top Bar) - Original Blue */
+.navbar {
+    background: #438EB9 !important; /* Original Ace Blue */
+    box-shadow: none !important;
+    border-bottom: none !important;
+}
+
+.navbar .navbar-brand {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+.ace-nav > li {
+    border-left: 1px solid #2B7DBC !important; /* Slightly darker blue separator */
+}
+
+.ace-nav > li > a {
+    background-color: transparent !important;
+    color: #ffffff !important;
+}
+
+.ace-nav > li > a:hover, .ace-nav > li.open > a {
+    background-color: #2B7DBC !important; /* Darker blue hover */
+    color: #ffffff !important;
+}
+
+.user-info {
+    color: #ffffff !important;
+}
+
+/* Navbar Menu Items (Left side) */
+.navbar-nav > li > a {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-nav > li:hover > a,
+.navbar-nav > li.open > a,
+.navbar-nav > li.active > a {
+    background-color: #2B7DBC !important; /* Darker blue hover */
+    color: #ffffff !important;
+}
+
+.navbar-nav > li > a > .ace-icon {
+    color: #ffffff !important;
+}
+
+.navbar-nav > li > a:hover > .ace-icon,
+.navbar-nav > li:hover > a > .ace-icon,
+.navbar-nav > li.open > a > .ace-icon,
+.navbar-nav > li.active > a > .ace-icon {
+    color: #ffffff !important;
+}
+
+/* 3. Sidebar - Original Light Grey */
+.sidebar {
+    background-color: #f2f2f2 !important; /* Original Light Grey */
+    border-right: 1px solid #e5e5e5;
+}
+
+.sidebar:before {
+    background-color: #f2f2f2 !important;
+}
+
+.nav-list > li > a {
+    background-color: transparent !important;
+    color: #585858 !important; /* Original Grey Text */
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.nav-list > li > a:hover, .nav-list > li.active > a {
+    background-color: #ffffff !important;
+    color: #2B7DBC !important; /* Blue text on active/hover */
+    font-weight: 600;
+}
+
+.nav-list > li > a:focus {
+    background-color: #ffffff !important;
+}
+
+.nav-list > li .submenu {
+    background-color: #ffffff !important;
+    border-color: #e5e5e5 !important;
+}
+
+.nav-list > li .submenu > li > a {
+    background-color: #ffffff !important;
+    color: #616161 !important;
+    border-top: 1px solid #f2f2f2;
+}
+
+.nav-list > li .submenu > li > a:hover {
+    color: #438EB9 !important; /* Blue text hover */
+    background-color: #f9f9f9 !important;
+}
+
+.nav-list > li.active > .submenu > li.active > a {
+    color: #438EB9 !important;
+    font-weight: bold;
+}
+
+/* Horizontal Sidebar Specifics */
+.sidebar.h-sidebar {
+    background-color: #f2f2f2 !important;
+}
+
+.sidebar.h-sidebar .nav-list > li > .submenu > li:first-child,
+.sidebar.h-sidebar .nav-list > li.hover > .submenu > li.hover-show,
+.sidebar.h-sidebar .nav-list > li:hover > .submenu > li.hover-show {
+    background-color: #438EB9 !important; /* Blue Header */
+    color: #fff !important;
+}
+
+.sidebar.h-sidebar .nav-list > li.hover > .submenu > li.hover-show > a,
+.sidebar.h-sidebar .nav-list > li:hover > .submenu > li.hover-show > a {
+    color: #fff !important;
+}
+
+/* 4. Content Area */
+.main-content {
+    background-color: #ffffff;
+}
+
+.page-content {
+    background-color: #ffffff !important;
+    padding: 20px 20px;
+}
+
+.page-header {
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 15px;
+}
+
+.page-header h1 {
+    color: #262626;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+/* 5. Buttons (Flat Design - No Gradients) */
+.btn {
+    background-image: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 2px !important; /* Slightly squarer like original but flat */
+    font-weight: normal;
+    transition: all 0.2s;
+}
+
+/* Maintain original colors for buttons but flat */
+.btn-primary, .btn-primary:focus { background-color: #438EB9 !important; border-color: #438EB9 !important; }
+.btn-primary:hover { background-color: #2B7DBC !important; }
+
+.btn-info, .btn-info:focus { background-color: #6fb3e0 !important; border-color: #6fb3e0 !important; }
+.btn-info:hover { background-color: #4f99c6 !important; }
+
+.btn-success, .btn-success:focus { background-color: #87b87f !important; border-color: #87b87f !important; }
+.btn-success:hover { background-color: #6fb3e0 !important; } /* Wait, original green hover is different, but let's stick to safe */
+
+.btn-danger, .btn-danger:focus { background-color: #d15b47 !important; border-color: #d15b47 !important; }
+.btn-danger:hover { background-color: #b74635 !important; }
+
+.btn-warning, .btn-warning:focus { background-color: #ffb752 !important; border-color: #ffb752 !important; }
+.btn-warning:hover { background-color: #e59729 !important; }
+
+/* 6. Tables */
+.table {
+    background-color: #fff;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.table thead tr {
+    background: #f2f2f2 !important; /* Light Grey Header */
+    background-image: none !important;
+}
+
+.table thead tr th {
+    color: #707070;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 7. Forms */
+input[type="text"], input[type="password"], textarea, select {
+    border-radius: 0 !important;
+    border: 1px solid #d5d5d5 !important;
+    padding: 5px 4px !important;
+    box-shadow: none !important;
+    color: #858585;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
+    border-color: #f59942 !important; /* Orange focus like original */
+    color: #555 !important;
+}
+
+/* 8. Widgets / InfoBoxes */
+.infobox {
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+}
+
+.widget-box {
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px solid #CCC;
+    background: #fff;
+}
+
+.widget-header {
+    background: #f7f7f7 !important;
+    background-image: none !important;
+    border-bottom: 1px solid #DDD;
+    color: #669fc7;
+}
+
+/* Footer */
+.footer-content {
+    background-color: #f2f2f2 !important;
+    color: #438EB9 !important; /* Original Blue */
+    border-top: 3px double #e5e5e5;
+}
+
+/* Tooltips - Revert to standard Bootstrap black */
+.tooltip-inner {
+    background-color: #333 !important;
+    color: #fff !important;
+    border-radius: 4px;
+}
+.tooltip.top .tooltip-arrow { border-top-color: #333 !important; }
+.tooltip.bottom .tooltip-arrow { border-bottom-color: #333 !important; }
+.tooltip.left .tooltip-arrow { border-left-color: #333 !important; }
+.tooltip.right .tooltip-arrow { border-right-color: #333 !important; }
+
+/* Login */
+.login-layout {
+    background-color: #438EB9 !important; /* Blue background */
+}
