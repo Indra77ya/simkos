@@ -140,8 +140,9 @@ class pengguna extends MY_App {
 			
 			$aaData = array();
 			foreach($query as $row){
-				$rsnotelp=$this->db->query("select notelp from anak_kost where idanakkost=(select idanakkost from ".($jenis=="Tahunan"?"pendaftaran_tahunan":"pendaftaran")." where idPendaftaran='".$row->IDPENDAFTARAN."')")->row();
+				$rsnotelp=$this->db->query("select notelp, nama from anak_kost where idanakkost=(select idanakkost from ".($jenis=="Tahunan"?"pendaftaran_tahunan":"pendaftaran")." where idPendaftaran='".$row->IDPENDAFTARAN."')")->row();
 				$notelp=$rsnotelp->notelp;
+				$nama_penghuni=$rsnotelp->nama;
 				$hp=substr($notelp, 1, strlen($notelp)-1);
 				$nohp='+62'.$hp;
 				$aaData[] = array(
@@ -150,8 +151,8 @@ class pengguna extends MY_App {
 					'IDPENDAFTARAN'=>$row->IDPENDAFTARAN,
 					'USERNAME'=>$row->USERNAME,
 					'PASSWORD'=>"***",
-					'NAMA'=>$row->NAMA,
-					'ACTION'=>'<a href="javascript:void(0)" onclick="doReset(\''.$jenis.'\', \''.$row->NAMA.'\', \''.$row->IDPENDAFTARAN.'\','.$row->ID.')" data-id="'.$row->ID.'"><i class="fa fa-bolt  " title="Reset Password?"></i> Reset Password</a> | <a href="https://wa.me/'.$nohp.'?text=Login aplikasi penghuni : username: '.$row->USERNAME.', password: 12345" target="_blank"><img src="'.base_url('assets/images/waku.png').'" style="width:25px;height:25px">Kirim Data Login</a>'
+					'NAMA'=>$nama_penghuni,
+					'ACTION'=>'<a href="javascript:void(0)" onclick="doReset(\''.$jenis.'\', \''.$nama_penghuni.'\', \''.$row->IDPENDAFTARAN.'\','.$row->ID.')" data-id="'.$row->ID.'"><i class="fa fa-bolt  " title="Reset Password?"></i> Reset Password</a> | <a href="https://wa.me/'.$nohp.'?text=Login aplikasi penghuni : username: '.$row->USERNAME.', password: 12345" target="_blank"><img src="'.base_url('assets/images/waku.png').'" style="width:25px;height:25px">Kirim Data Login</a>'
 
 
 					
