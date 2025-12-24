@@ -467,8 +467,12 @@ $('#btsimpan_bln').click(function(e){
 		//var form_data = $('#myform_bln').serialize();
 		$().showMessage('Sedang diproses.. Harap tunggu..');
 		var notelp=$("#bln_notelp1").val();
-		var hp=notelp.substring(1,notelp.length-1);		
-		var nohp='+62'.$hp;
+		var nohp;
+		if (notelp.startsWith('0')) {
+		    nohp = '+62' + notelp.substring(1);
+		} else {
+		    nohp = notelp;
+		}
 		$.ajax({
 			type: 'POST',
 			url: '<?php echo base_url('e_pendaftaran/saveBulanan');?>',
