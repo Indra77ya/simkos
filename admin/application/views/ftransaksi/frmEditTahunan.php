@@ -155,7 +155,7 @@
 <div class="row">
 	<div class="col-md-8">
 		<div class="form-group"><label class="col-sm-4 control-label">E-mail*</label>
-			<div class="col-sm-8"><?=form_input(array("name"=>"thn_email1","id"=>"thn_email1","class"=>"form-control", "value"=>$res->EMAIL, "readonly"=>true));?>	</div>
+			<div class="col-sm-8"><?=form_input(array("name"=>"thn_email1","id"=>"thn_email1","class"=>"form-control", "value"=>$res->EMAIL));?>	</div>
 		</div>
 	</div>
 </div>
