@@ -182,8 +182,8 @@
 <div class="widget-header">
 	<h4 class="widget-title">Biaya Tambahan Fasilitas</h4>
 </div><!-- widget-header -->
-
-<div class="row"><label class="col-md-10 control-label">Jika pendaftar membawa perlengkapan pribadi yang mengkonsumsi listrik & tempat selain yang disediakan. Biaya dikenakan per bulan</label></DIV>
+<br>
+<div class="row"><label class="control-label">Jika pendaftar membawa perlengkapan pribadi yang mengkonsumsi listrik & tempat selain yang disediakan. Biaya dikenakan per bulan</label></DIV>
 
 <table  border="0" cellspacing=0 id="tbDetil_mgg" class="table  table-bordered table-hover">   
   <thead> <tr><th>No</th><th>Biaya</th><th>Tarif</th></tr></thead>

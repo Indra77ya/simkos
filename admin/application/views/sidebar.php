@@ -7,7 +7,7 @@ $role=$this->session->userdata('auth')->ROLE;
 				<script type="text/javascript">
 					try{ace.settings.loadState('sidebar')}catch(e){}
 				</script>
-
+			<!--
 				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
 					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
 						<?	if ($role=="Superadmin"){ ?>
@@ -32,7 +32,7 @@ $role=$this->session->userdata('auth')->ROLE;
 
 						<span class="btn btn-danger"></span>
 					</div>
-				</div><!-- /.sidebar-shortcuts -->
+				</div>-->
 
 				<ul class="nav nav-list">
 					<li class="hover <?=($setMenu=="mn01"?"active open":"")?>">

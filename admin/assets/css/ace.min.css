@@ -5603,7 +5603,7 @@ body.mob-safari .sidebar.sidebar-fixed {
     bottom: 4px;
     padding: 8px;
     line-height: 36px;
-    border-top: 3px double #E5E5E5
+    border-top: 0px double #E5E5E5
 }
 
 .footer.footer-fixed .footer-inner {
@@ -10537,7 +10537,7 @@ tr.detail-row>td {
     padding: 0;
     box-shadow: none;
     margin: 3px 0;
-    border: 1px solid #CCC
+    border: 0px solid #CCC
 }
 
 @media only screen and (max-width: 767px) {
@@ -11905,7 +11905,7 @@ tr.detail-row>td {
 
 .infobox>.infobox-data>.infobox-data-number {
     display: block;
-    font-size: 12x;
+    font-size: 12px;
     margin: 2px 0 4px;
     position: relative;
     font-weight: bold;

@@ -102,6 +102,7 @@
 <div class="widget-header">
 	<h4 class="widget-title">Data Pribadi</h4>
 </div><!-- widget-header -->
+<br>
 <div class="row">
 	<div class="col-md-8">
 		<div class="form-group"><label class="col-sm-4 control-label">Nama Lengkap*</label>
@@ -154,7 +155,7 @@
 <div class="row">
 	<div class="col-md-8">
 		<div class="form-group"><label class="col-sm-4 control-label">E-mail*</label>
-			<div class="col-sm-8"><?=form_input(array("name"=>"thn_email1","id"=>"thn_email1","class"=>"form-control", "value"=>$res->EMAIL, "readonly"=>true));?>	</div>
+			<div class="col-sm-8"><?=form_input(array("name"=>"thn_email1","id"=>"thn_email1","class"=>"form-control", "value"=>$res->EMAIL));?>	</div>
 		</div>
 	</div>
 </div>
@@ -218,6 +219,7 @@
 <div class="widget-header">
 	<h4 class="widget-title">Orang yang bisa dihubungi</h4>
 </div><!-- widget-header -->
+<br>
 <div class="row">
 	<div class="col-md-8">
 		<div class="form-group"><label class="col-sm-4 control-label">Nama Lengkap</label>
@@ -293,8 +295,8 @@
 <div class="widget-header">
 	<h4 class="widget-title">Biaya Tambahan Fasilitas</h4>
 </div><!-- widget-header -->
-
-<div class="row"><label class="col-md-10 control-label">Jika pendaftar membawa perlengkapan pribadi yang mengkonsumsi listrik & tempat selain yang disediakan. Biaya dikenakan per bulan</label></DIV>
+<br>
+<div class="row"><label class="control-label">Jika pendaftar membawa perlengkapan pribadi yang mengkonsumsi listrik & tempat selain yang disediakan. Biaya dikenakan per bulan</label></DIV>
 
 <table  border="0" cellspacing=0 id="tbDetil" class="table  table-bordered table-hover">   
   <thead> <tr><th>No</th><th>Biaya</th><th>Tarif</th></tr></thead>
