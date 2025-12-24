@@ -140,6 +140,59 @@ body {
     color: #fff !important;
 }
 
+/* Fix for top-level menu items to show TEXT below ICON in Horizontal Sidebar */
+.sidebar.h-sidebar .nav-list > li {
+    height: auto !important;
+    min-width: 90px;
+    text-align: center;
+}
+
+.sidebar.h-sidebar .nav-list > li > a {
+    height: auto !important;
+    line-height: normal !important;
+    padding: 10px 5px !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar.h-sidebar .nav-list > li > a > .menu-icon {
+    display: block !important;
+    font-size: 24px !important;
+    margin-right: 0 !important;
+    margin-bottom: 4px !important;
+    line-height: normal !important;
+    width: auto !important;
+}
+
+.sidebar.h-sidebar .nav-list > li > a > .menu-text {
+    display: block !important;
+    position: static !important;
+    background-color: transparent !important;
+    border: none !important;
+    color: inherit !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    white-space: normal !important;
+    text-align: center;
+    opacity: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    margin-top: 2px;
+}
+
+/* Hide the arrow in top level since it's now a block */
+.sidebar.h-sidebar .nav-list > li > .arrow {
+    display: none !important;
+}
+
+/* Submenu adjustments */
+.sidebar.h-sidebar .nav-list > li > .submenu {
+    top: 100% !important; /* Push it below the taller item */
+    margin-top: 0 !important;
+}
+
 /* 4. Content Area */
 .main-content {
     background-color: #ffffff;

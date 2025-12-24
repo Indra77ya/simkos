@@ -3,7 +3,7 @@ $setMenu=$this->config->item('mymenu');
 $setSubMenu=$this->config->item('mysubmenu');
 $role=$this->session->userdata('auth')->ROLE;
 ?>
-<div id="sidebar" class="sidebar      h-sidebar                navbar-collapse collapse          ace-save-state">
+<div id="sidebar" class="sidebar h-sidebar navbar-collapse collapse ace-save-state">
 				<script type="text/javascript">
 					try{ace.settings.loadState('sidebar')}catch(e){}
 				</script>
