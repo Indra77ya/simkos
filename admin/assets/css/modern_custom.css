@@ -143,27 +143,28 @@ body {
 /* Fix for top-level menu items to show TEXT below ICON in Horizontal Sidebar */
 .sidebar.h-sidebar .nav-list > li {
     height: auto !important;
-    min-width: 90px;
+    min-width: 120px !important; /* Slightly wider */
     text-align: center;
+    float: left !important; /* Revert to float for better compatibility with Ace */
+    display: block !important;
+    border-right: 1px solid #e5e5e5;
+    position: relative;
 }
 
 .sidebar.h-sidebar .nav-list > li > a {
-    height: auto !important;
+    height: 90px !important; /* Fixed height for uniformity */
     line-height: normal !important;
-    padding: 10px 5px !important;
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding: 15px 5px !important;
+    display: block !important; /* Reset flex to block to fix potential issues */
 }
 
 .sidebar.h-sidebar .nav-list > li > a > .menu-icon {
     display: block !important;
     font-size: 24px !important;
-    margin-right: 0 !important;
-    margin-bottom: 4px !important;
+    margin: 0 auto 5px auto !important; /* Center horizontally */
     line-height: normal !important;
-    width: auto !important;
+    width: 100% !important;
+    text-align: center;
 }
 
 .sidebar.h-sidebar .nav-list > li > a > .menu-text {
@@ -174,12 +175,13 @@ body {
     color: inherit !important;
     font-size: 13px !important;
     line-height: 1.4 !important;
-    white-space: normal !important;
+    white-space: normal !important; /* Allow wrapping */
     text-align: center;
     opacity: 1 !important;
-    width: auto !important;
+    width: 100% !important;
     height: auto !important;
-    margin-top: 2px;
+    margin: 0 auto !important;
+    padding: 0 5px !important;
 }
 
 /* Hide the arrow in top level since it's now a block */
