@@ -28,7 +28,7 @@
 		<![endif]-->
 		<link rel="stylesheet" href="<?php echo base_url('assets/css/ace-skins.min.css');?>" />
 		<link rel="stylesheet" href="<?php echo base_url('assets/css/ace-rtl.min.css');?>" />
-		
+
 
 		<!-- ace settings handler -->
 		<script src="<?php echo base_url('assets/js/ace-extra.min.js');?>"></script>
