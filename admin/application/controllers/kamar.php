@@ -285,12 +285,12 @@ class kamar extends MY_App {
 			$sortby = $this->input->get('iSortCol_0');
 			$srotdir = $this->input->get('sSortDir_0');
 			
-			$str = "SELECT k.idkamar, labelkamar,kapasitas, terisi,luas, fasilitas, tarifharian, tarifbulanan, tariftahunan, tarifmingguan, (select lokasi from lokasi where id=k.idlokasi) namalokasi 
-					FROM `cekkamar` c, kamar k
-					WHERE c.idkamar=k.idkamar  ";
+			$str = "SELECT k.idkamar, labelkamar,kapasitas, COALESCE(terisi,0) terisi, luas, fasilitas, tarifharian, tarifbulanan, tariftahunan, tarifmingguan, (select lokasi from lokasi where id=k.idlokasi) namalokasi
+					FROM kamar k LEFT JOIN `cekkamar` c ON c.idkamar=k.idkamar
+					WHERE 1  ";
 			
 			if (!empty($_GET['idlokasi'])){
-				$str .= " AND idlokasi = ".$_GET['idlokasi'];
+				$str .= " AND k.idlokasi = ".$_GET['idlokasi'];
 			}
 			if ( $_GET['sSearch'] != "" )
 			{
