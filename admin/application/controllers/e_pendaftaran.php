@@ -76,7 +76,7 @@ class e_pendaftaran extends MY_App {
 					array(
 						'field' => 'thn_email1',
 						'label' => 'EMAIL_PENGHUNI',
-						'rules' => 'trim|xss_clean'
+						'rules' => 'trim|xss_clean|required'
 					),
 					array(
 						'field' => 'thn_deposit',
@@ -383,7 +383,7 @@ class e_pendaftaran extends MY_App {
 					array(
 						'field' => 'bln_email1',
 						'label' => 'EMAIL_PENGHUNI',
-						'rules' => 'trim|xss_clean'
+						'rules' => 'trim|xss_clean|required'
 					),
 					array(
 						'field' => 'bln_deposit',
@@ -685,6 +685,11 @@ class e_pendaftaran extends MY_App {
 						'rules' => 'trim|xss_clean|required'
 					),
 					array(
+						'field' => 'mgg_email1',
+						'label' => 'EMAIL_PENGHUNI',
+						'rules' => 'trim|xss_clean|required'
+					),
+					array(
 						'field' => 'mgg_alamat1',
 						'label' => 'ALAMAT_ASAL',
 						'rules' => 'trim|xss_clean'
@@ -831,6 +836,11 @@ class e_pendaftaran extends MY_App {
 						'rules' => 'trim|xss_clean|required'
 					),
 					array(
+						'field' => 'hr_email1',
+						'label' => 'EMAIL_PENGHUNI',
+						'rules' => 'trim|xss_clean|required'
+					),
+					array(
 						'field' => 'hr_alamat1',
 						'label' => 'ALAMAT_ASAL',
 						'rules' => 'trim|xss_clean'
@@ -922,6 +932,11 @@ class e_pendaftaran extends MY_App {
 	}
 	public function checkEmail(){
 		$keyword = $this->input->post('email');		
+		if (empty($keyword)) {
+			$respon['status'] = 'success';
+			echo json_encode($respon);
+			return;
+		}
 		$str="select count(*) jml from login_penghuni where username='".$keyword."'";
 		$query = $this->db->query($str)->row();
 		if($query->jml<=0){

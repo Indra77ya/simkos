@@ -120,7 +120,7 @@
 </div>
 <div class="row">
 	<div class="col-md-8">
-		<div class="form-group"><label class="col-sm-4 control-label">E-mail</label>
+		<div class="form-group"><label class="col-sm-4 control-label">E-mail*</label>
 			<div class="col-sm-8"><?=form_input(array("name"=>"hr_email1","id"=>"hr_email1","class"=>"form-control","value"=>$res->email));?>	</div>
 		</div>
 	</div>
