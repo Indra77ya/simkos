@@ -170,6 +170,9 @@ class e_pendaftaran extends MY_App {
 
 				if ($proses=="editing"){
 					if ($this->db->where('idanakkost',$this->input->post('idanakkost'))->update('anak_kost',$dataPenghuni)){
+
+						$this->db->where('IDANAKKOST',$this->input->post('idanakkost'))->update('login_penghuni', array('USERNAME' => $this->input->post('thn_email1')));
+
 						$this->db->trans_commit();
 						$respon->status = 'success';
 					}else {
@@ -475,6 +478,9 @@ class e_pendaftaran extends MY_App {
 
 				if ($proses=="editing"){
 					if ($this->db->where('idanakkost',$this->input->post('idanakkost'))->update('anak_kost',$dataPenghuni)){
+
+						$this->db->where('IDANAKKOST',$this->input->post('idanakkost'))->update('login_penghuni', array('USERNAME' => $this->input->post('bln_email1')));
+
 						$this->db->trans_commit();
 						$respon->status = 'success';
 					}else {

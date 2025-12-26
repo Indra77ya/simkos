@@ -31,10 +31,10 @@
 			<tr>
 				<th>ID</th>
 				<th>LOKASI/CABANG</th>
+				<th>NAMA</th>
 				<th>NO. REGISTRASI</th>				
 				<th>USERNAME</th>				
 				<th>PASSWORD</th>
-				<th>NAMA</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -57,10 +57,10 @@
 			"aoColumns": [
 				{"mData": "ID" },
 				{"mData": "LOKASI" },
+				{"mData": "NAMA" },
 				{"mData": "IDPENDAFTARAN" },
 				{"mData": "USERNAME" },
 				{"mData": "PASSWORD" },
-				{"mData": "NAMA" },
 				{"mData": "ACTION", "sortable":false }
 			],
 			"sAjaxSource": "<?php echo base_url('pengguna/json_data_penghuni');?>"
