@@ -76,7 +76,7 @@ class e_pendaftaran extends MY_App {
 					array(
 						'field' => 'thn_email1',
 						'label' => 'EMAIL_PENGHUNI',
-						'rules' => 'trim|xss_clean|required'
+						'rules' => 'trim|xss_clean'
 					),
 					array(
 						'field' => 'thn_deposit',
@@ -383,7 +383,7 @@ class e_pendaftaran extends MY_App {
 					array(
 						'field' => 'bln_email1',
 						'label' => 'EMAIL_PENGHUNI',
-						'rules' => 'trim|xss_clean|required'
+						'rules' => 'trim|xss_clean'
 					),
 					array(
 						'field' => 'bln_deposit',
@@ -687,7 +687,7 @@ class e_pendaftaran extends MY_App {
 					array(
 						'field' => 'mgg_email1',
 						'label' => 'EMAIL_PENGHUNI',
-						'rules' => 'trim|xss_clean|required'
+						'rules' => 'trim|xss_clean'
 					),
 					array(
 						'field' => 'mgg_alamat1',
@@ -838,7 +838,7 @@ class e_pendaftaran extends MY_App {
 					array(
 						'field' => 'hr_email1',
 						'label' => 'EMAIL_PENGHUNI',
-						'rules' => 'trim|xss_clean|required'
+						'rules' => 'trim|xss_clean'
 					),
 					array(
 						'field' => 'hr_alamat1',
