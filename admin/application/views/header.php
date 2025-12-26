@@ -29,7 +29,9 @@ $total=$monthUnpaidNotif+$yearUnpaidNotif+$weekUnpaidNotif+$dayUnpaidNotif;
 					<button class="pull-right navbar-toggle navbar-toggle-img collapsed" type="button" data-toggle="collapse" data-target=".navbar-buttons,.navbar-menu">
 						<span class="sr-only">Toggle user menu</span>
 
+						<?php if (!empty($this->session->userdata('auth')->FOTO)) { ?>
 						<img class="nav-user-photo" src="<?php echo base_url('assets/images/avatars/'.$this->session->userdata('auth')->FOTO);?>" alt="<?php echo $this->session->userdata('auth')->NAMA."'s Photo"?>" />
+						<?php } ?>
 								<span class="user-info">
 									<small>Welcome,</small>
 									<?php echo $this->session->userdata('auth')->NAMA?>
@@ -157,7 +159,9 @@ $total=$monthUnpaidNotif+$yearUnpaidNotif+$weekUnpaidNotif+$dayUnpaidNotif;
 
 						<li class="light-blue dropdown-modal ">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<?php if (!empty($this->session->userdata('auth')->FOTO)) { ?>
 								<img class="nav-user-photo" src="<?php echo base_url('assets/images/avatars/'.$this->session->userdata('auth')->FOTO);?>" alt="<?php echo $this->session->userdata('auth')->NAMA."'s Photo"?>" />
+								<?php } ?>
 								<span class="user-info">
 									<small>Welcome,</small>
 									<?php echo $this->session->userdata('auth')->NAMA?>
@@ -174,10 +178,10 @@ $total=$monthUnpaidNotif+$yearUnpaidNotif+$weekUnpaidNotif+$dayUnpaidNotif;
 								</li>-->
 
 								<? if ($this->session->userdata('auth')->ROLE == "Admin" || $this->session->userdata('auth')->ROLE == "Superadmin") { ?>
-								<li>
+								<!--<li>
 									<?php echo anchor('pengguna/index','<i class="ace-icon fa fa-user"></i>Profile');?>									
-								</li>
-								<li class="divider"></li>
+								</li>-->
+<!--								<li class="divider"></li>-->
 								<?}?>
 								
 
