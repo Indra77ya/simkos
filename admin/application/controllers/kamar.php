@@ -14,7 +14,7 @@ class kamar extends MY_App {
 	public function index()
 	{	
 		if ($this->session->userdata('auth')->ROLE=="Superadmin"){
-			$data['lokasi'] = $this->common_model->comboLokasi();
+			$data['lokasi'] = $this->common_model->comboLokasi('- Semua Lokasi -');
 		}else{
 			//$data['lokasi'] = $this->common_model->comboLokasi();
 			$data['lokasi'] =$this->common_model->getLokasi($this->session->userdata('auth')->IDLOKASI);
@@ -260,7 +260,7 @@ class kamar extends MY_App {
 	public function loadRoomList(){
 		
 		if ($this->session->userdata('auth')->ROLE=="Superadmin"){
-			$data['lokasi'] = $this->common_model->comboLokasi();
+			$data['lokasi'] = $this->common_model->comboLokasi('- Semua Lokasi -');
 		}else{
 			$data['lokasi'] =$this->common_model->getLokasi($this->session->userdata('auth')->IDLOKASI);
 		}
@@ -292,7 +292,6 @@ class kamar extends MY_App {
 			if (!empty($_GET['idlokasi'])){
 				$str .= " AND idlokasi = ".$_GET['idlokasi'];
 			}
-			$str .= " AND k.idlokasi > 2 ";
 			if ( $_GET['sSearch'] != "" )
 			{
 				
