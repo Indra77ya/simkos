@@ -292,6 +292,7 @@ class kamar extends MY_App {
 			if (!empty($_GET['idlokasi'])){
 				$str .= " AND idlokasi = ".$_GET['idlokasi'];
 			}
+			$str .= " AND k.idlokasi > 2 ";
 			if ( $_GET['sSearch'] != "" )
 			{
 				
