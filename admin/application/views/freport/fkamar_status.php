@@ -43,7 +43,8 @@
 				//if ($sisa!='<B>Penuh</B>'){
 				echo '<tr valign=top >';
 				echo '<td align="center">'.$i.'</td>';
-				echo '<td><B>'.$rs->labelkamar.'</B><br>Luas : '.$rs->luas.' M</td>';
+				echo '<td><B>'.$rsMaster->LABELKAMAR.'</B><br>Luas : '.$rsMaster->LUAS.' M</td>';
+				echo '<td><B>'.$rsMaster->LABELKAMAR.'</B><br>Luas : '.$rsMaster->LUAS.' M</td>';
 				echo '<td >'.$rsMaster->FASILITAS.'</td>';
 				echo '<td align=center>'.$rsMaster->KAPASITAS.' Orang</td>';
 				echo '<td align=center  ><b>'.$terisi.'</b></td>';
