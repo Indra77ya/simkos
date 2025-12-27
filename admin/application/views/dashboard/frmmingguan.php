@@ -116,7 +116,7 @@
 </div>
 <div class="row">
 	<div class="col-md-11">
-		<div class="form-group"><label class="col-sm-4 control-label">E-mail</label>
+		<div class="form-group"><label class="col-sm-4 control-label">E-mail*</label>
 			<div class="col-sm-8"><?=form_input(array("name"=>"mgg_email1","id"=>"mgg_email1","class"=>"form-control"));?>	</div>
 		</div>
 	</div>
@@ -151,7 +151,7 @@
 </div>
 <div class="row">
 	<div class="col-md-11">
-		<div class="form-group"><label class="col-sm-4 control-label">Alamat Asal* </label>
+		<div class="form-group"><label class="col-sm-4 control-label">Alamat Asal</label>
 			<div class="col-sm-8"><?=form_input(array("name"=>"mgg_alamat1","id"=>"mgg_alamat1","class"=>"form-control"));?>	</div>
 		</div>
 	</div>

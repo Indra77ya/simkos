@@ -66,7 +66,7 @@ class e_pendaftaran extends MY_App {
 					array(
 						'field' => 'thn_alamat1',
 						'label' => 'ALAMAT_ASAL',
-						'rules' => 'trim|xss_clean|required'
+						'rules' => 'trim|xss_clean'
 					),
 					array(
 						'field' => 'thn_posisi_meteran',
@@ -76,7 +76,7 @@ class e_pendaftaran extends MY_App {
 					array(
 						'field' => 'thn_email1',
 						'label' => 'EMAIL_PENGHUNI',
-						'rules' => 'trim|xss_clean|required'
+						'rules' => 'trim|xss_clean'
 					),
 					array(
 						'field' => 'thn_deposit',
@@ -148,7 +148,7 @@ class e_pendaftaran extends MY_App {
 							'JENISKELAMIN' => $this->input->post('thn_jnskelamin1'),							
 							'TEMPAT_LAHIR' => $this->input->post('thn_tempatlahir1'),						
 							'TGLLAHIR' =>($this->input->post('thn_tgllahir1')==""?null:$this->input->post('thn_tgllahir1')),	
-							'ALAMAT_ASAL' => $this->input->post('thn_alamat1') ,	
+							'ALAMAT_ASAL' => ($this->input->post('thn_alamat1') ? $this->input->post('thn_alamat1') : '') ,
 							'NOTELP' =>$this->input->post('thn_notelp1'),	
 							'EMAIL' =>$this->input->post('thn_email1'),	
 							'FOTO' =>$foto,		
@@ -373,7 +373,7 @@ class e_pendaftaran extends MY_App {
 					array(
 						'field' => 'bln_alamat1',
 						'label' => 'ALAMAT_ASAL',
-						'rules' => 'trim|xss_clean|required'
+						'rules' => 'trim|xss_clean'
 					),
 					array(
 						'field' => 'bln_posisi_meteran',
@@ -383,7 +383,7 @@ class e_pendaftaran extends MY_App {
 					array(
 						'field' => 'bln_email1',
 						'label' => 'EMAIL_PENGHUNI',
-						'rules' => 'trim|xss_clean|required'
+						'rules' => 'trim|xss_clean'
 					),
 					array(
 						'field' => 'bln_deposit',
@@ -456,7 +456,7 @@ class e_pendaftaran extends MY_App {
 							'JENISKELAMIN' => $this->input->post('bln_jnskelamin1'),							
 							'TEMPAT_LAHIR' => $this->input->post('bln_tempatlahir1'),						
 							'TGLLAHIR' =>($this->input->post('bln_tgllahir1')==""?null:$this->input->post('bln_tgllahir1')),	
-							'ALAMAT_ASAL' => $this->input->post('bln_alamat1') ,	
+							'ALAMAT_ASAL' => ($this->input->post('bln_alamat1') ? $this->input->post('bln_alamat1') : '') ,
 							'NOTELP' =>$this->input->post('bln_notelp1'),	
 							'EMAIL' =>$this->input->post('bln_email1'),	
 							'FOTO' =>$foto,		
@@ -685,9 +685,14 @@ class e_pendaftaran extends MY_App {
 						'rules' => 'trim|xss_clean|required'
 					),
 					array(
+						'field' => 'mgg_email1',
+						'label' => 'EMAIL_PENGHUNI',
+						'rules' => 'trim|xss_clean'
+					),
+					array(
 						'field' => 'mgg_alamat1',
 						'label' => 'ALAMAT_ASAL',
-						'rules' => 'trim|xss_clean|required'
+						'rules' => 'trim|xss_clean'
 					),
 					array(
 						'field' => 'mgg_tglcheckin',
@@ -718,7 +723,7 @@ class e_pendaftaran extends MY_App {
 							'noIdentitas' => $this->input->post('mgg_identitas1'),						
 							'telp' =>$this->input->post('mgg_notelp1'),	
 							'email' => $this->input->post('mgg_email1') ,	
-							'alamat_asal' =>$this->input->post('mgg_alamat1'),	
+							'alamat_asal' => ($this->input->post('mgg_alamat1') ? $this->input->post('mgg_alamat1') : ''),
 							'jk' =>$this->input->post('mgg_jnskelamin1'),
 							'tempat_lahir' =>$this->input->post('mgg_tempatlahir1'),	
 							'tgl_lahir' =>($this->input->post('mgg_tgllahir1')==""?null:$this->input->post('mgg_tgllahir1')),	
@@ -831,9 +836,14 @@ class e_pendaftaran extends MY_App {
 						'rules' => 'trim|xss_clean|required'
 					),
 					array(
+						'field' => 'hr_email1',
+						'label' => 'EMAIL_PENGHUNI',
+						'rules' => 'trim|xss_clean'
+					),
+					array(
 						'field' => 'hr_alamat1',
 						'label' => 'ALAMAT_ASAL',
-						'rules' => 'trim|xss_clean|required'
+						'rules' => 'trim|xss_clean'
 					),
 					array(
 						'field' => 'hr_tglcheckin',
@@ -864,7 +874,7 @@ class e_pendaftaran extends MY_App {
 							'noIdentitas' => $this->input->post('hr_identitas1'),						
 							'telp' =>$this->input->post('hr_notelp1'),	
 							'email' => $this->input->post('hr_email1') ,	
-							'alamat_asal' =>$this->input->post('hr_alamat1'),	
+							'alamat_asal' => ($this->input->post('hr_alamat1') ? $this->input->post('hr_alamat1') : ''),
 							'jk' =>$this->input->post('hr_jnskelamin1'),
 							'tempat_lahir' =>$this->input->post('hr_tempatlahir1'),	
 							'tgl_lahir' =>($this->input->post('hr_tgllahir1')==""?null:$this->input->post('hr_tgllahir1')),	
@@ -922,6 +932,11 @@ class e_pendaftaran extends MY_App {
 	}
 	public function checkEmail(){
 		$keyword = $this->input->post('email');		
+		if (empty($keyword)) {
+			$respon['status'] = 'success';
+			echo json_encode($respon);
+			return;
+		}
 		$str="select count(*) jml from login_penghuni where username='".$keyword."'";
 		$query = $this->db->query($str)->row();
 		if($query->jml<=0){
