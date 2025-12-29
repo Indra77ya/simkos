@@ -68,6 +68,10 @@ class dbtools extends MY_App {
 				$dataUpload = $this->upload->data();
 				$filepath = $dataUpload['full_path'];
 
+				// Disable DB Debugging to prevent crash on "Table exists" error
+				$old_db_debug = $this->db->db_debug;
+				$this->db->db_debug = FALSE;
+
 				// Turn off foreign key checks temporarily
                 $this->db->query('SET FOREIGN_KEY_CHECKS = 0');
 
@@ -92,9 +96,26 @@ class dbtools extends MY_App {
                         if (substr(trim($line), -1, 1) == ';') {
                             // Perform the query
                             if(!$this->db->query($templine)){
+								$errorNum = $this->db->_error_number();
+
+								// Error 1050: Table already exists. Try to Drop and Re-create.
+								if ($errorNum == 1050) {
+									if (preg_match('/CREATE\s+TABLE\s+(?:IF\s+NOT\s+EXISTS\s+)?[`"]?([a-zA-Z0-9_]+)[`"]?/i', $templine, $matches)) {
+										$tblName = $matches[1];
+										$this->db->query("DROP TABLE IF EXISTS " . $tblName);
+
+										// Retry the query
+										if ($this->db->query($templine)) {
+											$success_count++;
+											$templine = '';
+											continue;
+										}
+									}
+								}
+
                                  $error_count++;
                                  // Simple logging of the error (in a real app, maybe log to file)
-                                 $errors[] = "Error at: " . substr(strip_tags($templine), 0, 50) . "...";
+                                 $errors[] = "Error (" . $errorNum . ") at: " . substr(strip_tags($templine), 0, 50) . "...";
                             } else {
                                  $success_count++;
                             }
@@ -105,6 +126,9 @@ class dbtools extends MY_App {
                     fclose($handle);
 
                     $this->db->query('SET FOREIGN_KEY_CHECKS = 1');
+
+					// Restore DB Debug
+					$this->db->db_debug = $old_db_debug;
 
                     // Set feedback message
                     $msg = "Restore complete. Executed: $success_count queries. Failed: $error_count queries.";
