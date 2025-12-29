@@ -23,9 +23,9 @@
 										<h5 class=" smaller">
 										<ul>
 											<li>Pastikan untuk benar-benar akan merestore database, karena jika sudah ter restore maka database yang lama akan ter-replace</b>
-											<li>File yang diupload adalah file hasil backup dari aplikasi ini (format .sql)</b>
+											<li>File yang diupload bisa berupa file <b>.sql</b> (dari phpMyAdmin) atau <b>.zip</b> (Backup Aplikasi).</b>
 											<li>Nama file bebas, tidak harus sesuai format backup tanggal tertentu.</b>
-											<li>Pilih file .sql tersebut, lalu klik tombol <b>"Restore"</b>
+											<li>Pilih file tersebut, lalu klik tombol <b>"Restore"</b>
 											<li>Tunggu proses sampai selesai
 										</ul>
 										</h5>

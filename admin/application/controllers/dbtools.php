@@ -59,7 +59,7 @@ class dbtools extends MY_App {
             // But actually, we just want to ensure we accept whatever the user sends.
             // Let's rely on standard upload behavior which is flexible.
 			$config['upload_path'] = './public/upload_restore';
-			$config['allowed_types'] = 'sql|txt';
+			$config['allowed_types'] = 'sql|txt|zip';
 			$config['max_size']    = '20480'; // 20MB limit
 			
 			$this->load->library('upload', $config);
@@ -67,6 +67,39 @@ class dbtools extends MY_App {
 			if (  $this->upload->do_upload('inputfile')){
 				$dataUpload = $this->upload->data();
 				$filepath = $dataUpload['full_path'];
+				$uploaded_ext = strtolower(pathinfo($filepath, PATHINFO_EXTENSION));
+				$temp_extracted_path = '';
+
+				if ($uploaded_ext == 'zip') {
+					$zip = new ZipArchive;
+					if ($zip->open($filepath) === TRUE) {
+						// Find the first .sql file
+						$sqlFileIndex = -1;
+						for($i = 0; $i < $zip->numFiles; $i++) {
+							$filename = $zip->getNameIndex($i);
+							if (strtolower(pathinfo($filename, PATHINFO_EXTENSION)) == 'sql') {
+								$sqlFileIndex = $i;
+								break;
+							}
+						}
+
+						if ($sqlFileIndex != -1) {
+							$sqlFileName = $zip->getNameIndex($sqlFileIndex);
+							$zip->extractTo('./public/upload_restore/', $sqlFileName);
+							$zip->close();
+							$temp_extracted_path = './public/upload_restore/' . $sqlFileName;
+							$filepath = $temp_extracted_path; // Update filepath to point to the extracted SQL
+						} else {
+							echo "<script>alert('Error: No .sql file found inside the ZIP archive.');window.location.href='".site_url('dbtools/restore')."';</script>";
+							unlink($filepath);
+							return;
+						}
+					} else {
+						echo "<script>alert('Error: Failed to open ZIP file.');window.location.href='".site_url('dbtools/restore')."';</script>";
+						unlink($filepath);
+						return;
+					}
+				}
 
 				// Disable DB Debugging to prevent crash on "Table exists" error
 				$old_db_debug = $this->db->db_debug;
@@ -143,7 +176,12 @@ class dbtools extends MY_App {
                 }
 
                 // Clean up
-                unlink($filepath);
+                unlink($filepath); // This deletes the SQL file (either original or extracted)
+
+                // If we extracted a zip, we also need to delete the original zip file
+                if ($uploaded_ext == 'zip' && !empty($dataUpload['full_path']) && file_exists($dataUpload['full_path'])) {
+                     unlink($dataUpload['full_path']);
+                }
 
 			}else{
 				 $error = array('error' => $this->upload->display_errors());
