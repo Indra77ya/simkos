@@ -994,14 +994,16 @@ class rpt_pembayaran extends MY_App {
 			$title='Daftar Tagihan Penghuni belum bayar '.$reslokasi->lokasi.' Periode '.date('m-Y');
 			$namafile="tagihanList_".$reslokasi->lokasi."_".date('Y-m');
 
-			$objDrawing = new PHPExcel_Worksheet_Drawing();
-			$objDrawing->setName('Logo');
-			$objDrawing->setDescription('Logo');
-			$objDrawing->setPath('assets/images/logo/'.$logo);
-			$objDrawing->setHeight(60);
-			$objDrawing->setCoordinates('A1');
-			$objDrawing->setOffsetX(0);		
-			$objDrawing->setWorksheet($objPHPExcel->getActiveSheet());
+			if ($logo && file_exists('assets/images/logo/'.$logo)) {
+				$objDrawing = new PHPExcel_Worksheet_Drawing();
+				$objDrawing->setName('Logo');
+				$objDrawing->setDescription('Logo');
+				$objDrawing->setPath('assets/images/logo/'.$logo);
+				$objDrawing->setHeight(60);
+				$objDrawing->setCoordinates('A1');
+				$objDrawing->setOffsetX(0);
+				$objDrawing->setWorksheet($objPHPExcel->getActiveSheet());
+			}
 			
 			// Rename worksheet (worksheet, not filename)
 			$objPHPExcel->getActiveSheet()->setTitle('Daftar_Tagihan_'.$reslokasi->lokasi);
@@ -1106,7 +1108,7 @@ class rpt_pembayaran extends MY_App {
 						}
 					
 					
-					$objPHPExcel->getActiveSheet()->setCellValue('B'.$row, $rowXls->NO)->setCellValue('C'.$row, strtoupper($rowXls->labelkamar))->setCellValue('D'.$row, $rowXls->nama)->setCellValue('E'.$row, $rowXls->tglmulai)->setCellValue('F'.$row, $tag);
+					$objPHPExcel->getActiveSheet()->setCellValue('B'.$row, $rowXls->NO)->setCellValue('C'.$row, strtoupper($rowXls->labelkamar))->setCellValue('D'.$row, $rowXls->nama)->setCellValue('E'.$row, $rowXls->tglmulai)->setCellValue('F'.$row, str_replace('<br>', "\r\n", $tag));
 					foreach(range('B','F') as $columnID) {
 						$objPHPExcel->getActiveSheet()->getColumnDimension($columnID)->setAutoSize(true);
 					}
@@ -1185,7 +1187,7 @@ class rpt_pembayaran extends MY_App {
 
 							
 						}
-						$objPHPExcel->getActiveSheet()->setCellValue('B'.$row, $rowXls->NO)->setCellValue('C'.$row, strtoupper(str_replace(' ','&nbsp;', $rowXls->labelkamar)))->setCellValue('D'.$row, $rowXls->nama)->setCellValue('E'.$row, $rowXls->TGLDAFTAR)->setCellValue('F'.$row, $tag);
+						$objPHPExcel->getActiveSheet()->setCellValue('B'.$row, $rowXls->NO)->setCellValue('C'.$row, strtoupper($rowXls->labelkamar))->setCellValue('D'.$row, $rowXls->nama)->setCellValue('E'.$row, $rowXls->TGLDAFTAR)->setCellValue('F'.$row, str_replace('<br>', "\r\n", $tag));
 						foreach(range('B','F') as $columnID) {
 							$objPHPExcel->getActiveSheet()->getColumnDimension($columnID)->setAutoSize(true);
 						}
