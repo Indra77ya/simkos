@@ -970,7 +970,10 @@ class rpt_pembayaran extends MY_App {
 	}
 
 	public function unpaidToExcel(){
-		ob_start();
+		// Prevent any output until we are ready
+		ini_set('display_errors', 0);
+		ini_set('memory_limit', '512M');
+
 		$arrBulan=$this->arrBulan;
 		$lokasi=$this->input->post('lokasi');
 		$jenis_sewa=$this->input->post('jenis_sewa');
@@ -1207,14 +1210,29 @@ class rpt_pembayaran extends MY_App {
 			// Redirect output to a client�s web browser (Excel2007)
 			//clean the output buffer
 			
-			$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
-			$objWriter->save('public/report/'.$namafile.'.xlsx');
-			//write_file($path."/".$fileName,$out);
-			$data['isi']="public/report/".$namafile.".xlsx";
+			$writerType = 'Excel2007';
+			$fileExt = '.xlsx';
+			if (!class_exists('ZipArchive')) {
+				$writerType = 'Excel5';
+				$fileExt = '.xls';
+			}
 
-			if (ob_get_contents()) ob_end_clean();
-			echo json_encode($data);
+			try {
+				$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, $writerType);
+				$objWriter->save('public/report/'.$namafile.$fileExt);
+				$data['isi']="public/report/".$namafile.$fileExt;
+			} catch (Exception $e) {
+				// Handle exception if needed, or let the empty JSON response indicate failure (better than HTML error)
+				$data['error'] = $e->getMessage();
+			}
 			
+			// Clean all output buffers to ensure valid JSON
+			while (ob_get_level()) {
+				ob_end_clean();
+			}
+			header('Content-Type: application/json');
+			echo json_encode($data);
+			exit;
 		}
 		
 		
