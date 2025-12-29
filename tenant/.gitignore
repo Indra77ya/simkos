@@ -1,6 +1,7 @@
 .DS_Store
 
-admin/application/config/database.php
+tenant/application/config/database.php
+tenant/application/config/config.php
 application/cache/*
 !application/cache/index.html
 !application/cache/.htaccess
