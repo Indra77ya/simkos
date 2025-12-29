@@ -262,7 +262,6 @@ $total=$monthUnpaidNotif+$yearUnpaidNotif+$weekUnpaidNotif+$dayUnpaidNotif;
 					</li>
 
 
-					<!--
 					<li >
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<i class="ace-icon fa 	fa-download"></i>
@@ -285,7 +284,6 @@ $total=$monthUnpaidNotif+$yearUnpaidNotif+$weekUnpaidNotif+$dayUnpaidNotif;
 							<?php } ?>
 						</ul>
 					</li>
-					-->
 					<li>
 						<?php echo anchor('dashboard/eula','<i class="ace-icon fa 	fa-gavel"></i> <span class="menu-text"> EULA</span>','class="ajax-link"');?>
 						
