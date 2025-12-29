@@ -994,10 +994,11 @@ class rpt_pembayaran extends MY_App {
 			
 			//logo
 			$company=$this->session->userdata('param_company');
-			$logo=$this->session->userdata('logo');
+			// $logo=$this->session->userdata('logo');
 			$title='Daftar Tagihan Penghuni belum bayar '.$reslokasi->lokasi.' Periode '.date('m-Y');
 			$namafile="tagihanList_".$reslokasi->lokasi."_".date('Y-m');
 
+			/*
 			if ($logo && file_exists('assets/images/logo/'.$logo)) {
 				$objDrawing = new PHPExcel_Worksheet_Drawing();
 				$objDrawing->setName('Logo');
@@ -1008,6 +1009,7 @@ class rpt_pembayaran extends MY_App {
 				$objDrawing->setOffsetX(0);
 				$objDrawing->setWorksheet($objPHPExcel->getActiveSheet());
 			}
+			*/
 			
 			// Rename worksheet (worksheet, not filename)
 			$objPHPExcel->getActiveSheet()->setTitle('Daftar_Tagihan_'.$reslokasi->lokasi);
@@ -1015,17 +1017,18 @@ class rpt_pembayaran extends MY_App {
 			// Header
 			$objPHPExcel->getActiveSheet()->mergeCells('C1:AF1');
 			$objPHPExcel->getActiveSheet()->setCellValue('C1', $company);
-			$objPHPExcel->getActiveSheet()->getStyle('C1')->getFont()->setSize(20);
-			$objPHPExcel->getActiveSheet()->getStyle('C1')->getFont()->setBold(true);
+			// $objPHPExcel->getActiveSheet()->getStyle('C1')->getFont()->setSize(20);
+			// $objPHPExcel->getActiveSheet()->getStyle('C1')->getFont()->setBold(true);
 			
 			$objPHPExcel->getActiveSheet()->mergeCells('C2:AF2');
 			$objPHPExcel->getActiveSheet()->setCellValue('C2', $title);
-			$objPHPExcel->getActiveSheet()->getStyle('C2')->getFont()->setSize(14);
-			$objPHPExcel->getActiveSheet()->getStyle('C2')->getFont()->setBold(true);
+			// $objPHPExcel->getActiveSheet()->getStyle('C2')->getFont()->setSize(14);
+			// $objPHPExcel->getActiveSheet()->getStyle('C2')->getFont()->setBold(true);
 			
 			$objPHPExcel->getActiveSheet()->mergeCells('C3:AF3');
 			$objPHPExcel->getActiveSheet()->setCellValue('C3', 'Diterbitkan Tgl : '.date('d F Y'));
-			$objPHPExcel->getActiveSheet()->getStyle('C3')->getFont()->setSize(12);
+			// $objPHPExcel->getActiveSheet()->getStyle('C3')->getFont()->setSize(12);
+			/*
 			$setHeaderRow=array(
 						'font'    => array(
 							'bold'      => true
@@ -1050,6 +1053,7 @@ class rpt_pembayaran extends MY_App {
 							)
 						)
 					);
+			*/
 
 	//ISI
 	$row=5;
@@ -1058,7 +1062,7 @@ class rpt_pembayaran extends MY_App {
 				->setCellValue('D'.$row, 'Nama Penghuni')
 				->setCellValue('E'.$row, 'Tgl Mulai Inap')
 				->setCellValue('F'.$row, 'Detil');
-	$objPHPExcel->getActiveSheet()->getStyle('B'.$row.':F'.$row)->applyFromArray($setHeaderRow);
+	// $objPHPExcel->getActiveSheet()->getStyle('B'.$row.':F'.$row)->applyFromArray($setHeaderRow);
 	$row++;
 	$str="";
 		if ($jenis_sewa=="Bulanan"){
@@ -1113,10 +1117,12 @@ class rpt_pembayaran extends MY_App {
 					
 					
 					$objPHPExcel->getActiveSheet()->setCellValue('B'.$row, $rowXls->NO)->setCellValue('C'.$row, strtoupper($rowXls->labelkamar))->setCellValue('D'.$row, $rowXls->nama)->setCellValue('E'.$row, $rowXls->tglmulai)->setCellValue('F'.$row, str_replace('<br>', "\r\n", $tag));
+					/*
 					foreach(range('B','F') as $columnID) {
 						$objPHPExcel->getActiveSheet()->getColumnDimension($columnID)->setAutoSize(true);
 					}
 					 $objPHPExcel->getActiveSheet()->getStyle('F'.$row)->getAlignment()->setWrapText(true);
+					*/
 					$row++;
 				}
 				
@@ -1192,14 +1198,17 @@ class rpt_pembayaran extends MY_App {
 							
 						}
 						$objPHPExcel->getActiveSheet()->setCellValue('B'.$row, $rowXls->NO)->setCellValue('C'.$row, strtoupper($rowXls->labelkamar))->setCellValue('D'.$row, $rowXls->nama)->setCellValue('E'.$row, $rowXls->TGLDAFTAR)->setCellValue('F'.$row, str_replace('<br>', "\r\n", $tag));
+						/*
 						foreach(range('B','F') as $columnID) {
 							$objPHPExcel->getActiveSheet()->getColumnDimension($columnID)->setAutoSize(true);
 						}
 						 $objPHPExcel->getActiveSheet()->getStyle('F'.$row)->getAlignment()->setWrapText(true);
+						*/
 						 $row++;
 				}
 			}
 
+			/*
 			$objPHPExcel->getActiveSheet()->getHeaderFooter()->setOddHeader('&L&B '.$title.' &RPrinted on &D');
 			$objPHPExcel->getActiveSheet()->getHeaderFooter()->setOddFooter('&L&B' . $objPHPExcel->getProperties()->getTitle() . '&RPage &P of &N');
 
@@ -1207,6 +1216,7 @@ class rpt_pembayaran extends MY_App {
 			//echo date('H:i:s') , " Set page orientation and size" , EOL;
 			$objPHPExcel->getActiveSheet()->getPageSetup()->setOrientation(PHPExcel_Worksheet_PageSetup::ORIENTATION_LANDSCAPE);
 			$objPHPExcel->getActiveSheet()->getPageSetup()->setPaperSize(PHPExcel_Worksheet_PageSetup::PAPERSIZE_A4);
+			*/
 			// Redirect output to a client�s web browser (Excel2007)
 			//clean the output buffer
 			
