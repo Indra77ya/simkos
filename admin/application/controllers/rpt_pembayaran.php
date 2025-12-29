@@ -970,6 +970,7 @@ class rpt_pembayaran extends MY_App {
 	}
 
 	public function unpaidToExcel(){
+		ob_start();
 		$arrBulan=$this->arrBulan;
 		$lokasi=$this->input->post('lokasi');
 		$jenis_sewa=$this->input->post('jenis_sewa');
@@ -1205,12 +1206,13 @@ class rpt_pembayaran extends MY_App {
 			$objPHPExcel->getActiveSheet()->getPageSetup()->setPaperSize(PHPExcel_Worksheet_PageSetup::PAPERSIZE_A4);
 			// Redirect output to a client�s web browser (Excel2007)
 			//clean the output buffer
-			if (ob_get_contents()) ob_end_clean();
 			
 			$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
 			$objWriter->save('public/report/'.$namafile.'.xlsx');
 			//write_file($path."/".$fileName,$out);
 			$data['isi']="public/report/".$namafile.".xlsx";
+
+			if (ob_get_contents()) ob_end_clean();
 			echo json_encode($data);
 			
 		}
