@@ -320,11 +320,12 @@ class kamar extends MY_App {
 			foreach($query as $row){
 				
 				$terisi = $row->terisi ;
-				$sisa=(($row->kapasitas -$terisi)<=0?"<B>Penuh</B>":($row->kapasitas-$terisi));
+				$sisa_val = $row->kapasitas - $terisi;
+				$sisa=($sisa_val<=0?"<B>Penuh</B>":$sisa_val);
 				$fas=str_replace(array("\r", "\n","\""), '', $row->fasilitas);
 				$aaData[] = array(
-					'IDKAMAR'=>($sisa<=0?$row->idkamar: '<a href="javascript:void(0)" onclick="chooseThis(\''.$row->idkamar.'\',\''.$row->labelkamar.'\', \''.$fas.'\', \''.$row->tariftahunan.'\', \''.$row->tarifbulanan.'\', \''.$row->tarifmingguan.'\', \''.$row->tarifharian.'\')" data-id="'.$row->idkamar.'"  >'.$row->idkamar.'</a>'),
-					'LABELKAMAR'=>($sisa<=0? $row->labelkamar :'<a href="javascript:void(0)" onclick="chooseThis(\''.$row->idkamar.'\', \''.$row->labelkamar.'\', \''.$fas.'\', \''.$row->tariftahunan.'\', \''.$row->tarifbulanan.'\', \''.$row->tarifmingguan.'\', \''.$row->tarifharian.'\')" data-id="'.$row->idkamar.'"  >'.$row->labelkamar.'</a>'),
+					'IDKAMAR'=>($sisa_val<=0?$row->idkamar: '<a href="javascript:void(0)" onclick="chooseThis(\''.$row->idkamar.'\',\''.$row->labelkamar.'\', \''.$fas.'\', \''.$row->tariftahunan.'\', \''.$row->tarifbulanan.'\', \''.$row->tarifmingguan.'\', \''.$row->tarifharian.'\')" data-id="'.$row->idkamar.'"  >'.$row->idkamar.'</a>'),
+					'LABELKAMAR'=>($sisa_val<=0? $row->labelkamar :'<a href="javascript:void(0)" onclick="chooseThis(\''.$row->idkamar.'\', \''.$row->labelkamar.'\', \''.$fas.'\', \''.$row->tariftahunan.'\', \''.$row->tarifbulanan.'\', \''.$row->tarifmingguan.'\', \''.$row->tarifharian.'\')" data-id="'.$row->idkamar.'"  >'.$row->labelkamar.'</a>'),
 					'LOKASI'=>$row->namalokasi,
 					'KUOTA'=>$row->kapasitas,
 					'TERISI'=>$terisi,

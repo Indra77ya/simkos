@@ -43,14 +43,14 @@
 				
 				echo '<tr valign=top >';
 				echo '<td align="center">'.$i.'</td>';
-				echo '<td><B>'.$rs->labelkamar.'</B><br>Luas : '.$rs->luas.' M</td>';
+				echo '<td><B>'.$rsMaster->LABELKAMAR.'</B><br>Luas : '.$rsMaster->LUAS.' M</td>';
 				echo '<td >'.$rsMaster->FASILITAS.'</td>';
 				
 				echo '<td>Harian : Rp.'.number_format($rsMaster->TARIFHARIAN,2,',','.').'<br>Mingguan : Rp. '.number_format($rsMaster->TARIFMINGGUAN,2,',','.').'<br>Bulanan : Rp. '.number_format($rsMaster->TARIFBULANAN,2,',','.').'</td>';
 				echo '<td align=center>'.$rsMaster->KAPASITAS.' Orang</td>';
 				echo '<td align=center '.($sisa>0?' style="background-color:#a9ebbd"':'style="background-color:#ff3366"').'><b>'.$sisa.'</b></td>';
-				echo '<td align=center ><b>'.strftime("%d %B %Y", strtotime($rs->last_checkout_date)).'</b></td>';
-				echo '<td align=center ><b>'.$rs->selisih.'</b></td>';				
+				echo '<td align=center ><b>'.((isset($rs) && !empty($rs)) ? strftime("%d %B %Y", strtotime($rs->last_checkout_date)) : '-').'</b></td>';
+				echo '<td align=center ><b>'.((isset($rs) && !empty($rs)) ? $rs->selisih : '-').'</b></td>';
 				echo '</tr>';
 				
 				}
@@ -94,14 +94,14 @@
 				if ($sisa!='<B>Penuh</B>'){
 				echo '<tr valign=top >';
 				echo '<td align="center">'.$i.'</td>';
-				echo '<td><B>'.$rs->labelkamar.'</B><br>Luas : '.$rs->luas.' M</td>';
+				echo '<td><B>'.$rsMaster->LABELKAMAR.'</B><br>Luas : '.$rsMaster->LUAS.' M</td>';
 				echo '<td >'.$rsMaster->FASILITAS.'</td>';
 				
 				echo '<td>Harian : Rp.'.number_format($rsMaster->TARIFHARIAN,2,',','.').'<br>Mingguan : Rp. '.number_format($rsMaster->TARIFMINGGUAN,2,',','.').'<br>Bulanan : Rp. '.number_format($rsMaster->TARIFBULANAN,2,',','.').'</td>';
 				echo '<td align=center>'.$rsMaster->KAPASITAS.' Orang</td>';
 				echo '<td align=center '.($sisa>0?' style="background-color:#a9ebbd"':'style="background-color:#ff3366"').'><b>'.$sisa.'</b></td>';
-				echo '<td align=center ><b>'.strftime("%d %B %Y", strtotime($rs->last_checkout_date)).'</b></td>';
-				echo '<td align=center ><b>'.$rs->selisih.'</b></td>';
+				echo '<td align=center ><b>'.((isset($rs) && !empty($rs)) ? strftime("%d %B %Y", strtotime($rs->last_checkout_date)) : '-').'</b></td>';
+				echo '<td align=center ><b>'.((isset($rs) && !empty($rs)) ? $rs->selisih : '-').'</b></td>';
 				//echo '<td>'.$rsMaster[4].'</td>';
 				
 				echo '</tr>';
