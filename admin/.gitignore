@@ -2,6 +2,7 @@
 
 admin/application/config/database.php
 admin/application/config/config.php
+admin/application/views/login.php
 
 application/cache/*
 !application/cache/index.html
