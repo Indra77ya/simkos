@@ -55,7 +55,9 @@ class dbtools extends MY_App {
 	}
 	 public function dorestore(){
 			$nama_file = $_FILES['inputfile']['name'];			
-			$config['file_name'] = $nama_file;
+			// Remove $config['file_name'] to allow CodeIgniter to handle naming (avoiding overwrites or strict naming if any)
+            // But actually, we just want to ensure we accept whatever the user sends.
+            // Let's rely on standard upload behavior which is flexible.
 			$config['upload_path'] = './public/upload_restore';
 			$config['allowed_types'] = 'sql|txt';
 			$config['max_size']    = '20480'; // 20MB limit
