@@ -14,7 +14,7 @@
 
 										<hr />
 										<h3 class="lighter smaller">
-											Agreement Seluruh Software SimKos :											
+											Agreement Seluruh Software SIMKOS :											
 										</h3>
 
 										<div class="space"></div>
@@ -24,19 +24,19 @@
 										<div style="font-size: 14px;">
 <p>
   Aplikasi ini dikembangkan dengan lisensi yang berlaku 
-  <b>hanya untuk satu orang atau satu lembaga klien SimKos</b>.
+  <b>hanya untuk satu orang atau satu lembaga klien SIMKOS</b>.
 </p>
 
 <ul>
   <li>
     <b>Hak Pemegang Lisensi:</b> Pemegang lisensi berhak melakukan perubahan fitur 
     dan/atau pengembangan lebih lanjut sesuai kebutuhan lembaga atau perusahaannya, 
-    baik dengan bekerja sama dengan SimKos maupun melalui vendor pengembang lain.
+    baik dengan bekerja sama dengan SIMKOS maupun melalui vendor pengembang lain.
   </li>
   <li>
     <b>Larangan:</b> Dilarang keras menyalin, mendistribusikan, atau mengkomersialkan aplikasi ini 
     kepada pihak lain dalam bentuk asli, hasil modifikasi, maupun pengembangan turunan apa pun 
-    tanpa persetujuan tertulis dari SimKos.
+    tanpa persetujuan tertulis dari SIMKOS.
   </li>
   <li>
     <b>Tanggung Jawab:</b> Segala bentuk pelanggaran menjadi tanggung jawab penuh pelanggar, 

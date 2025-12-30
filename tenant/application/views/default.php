@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>SimKos <?php if (isset($pagetitle)) echo ' - '.$pagetitle;?></title>
+		<title>SIMKOS <?php if (isset($pagetitle)) echo ' - '.$pagetitle;?></title>
 
 		<meta name="description" content="overview &amp; stats" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -196,12 +196,12 @@
 				<div class="footer-inner">
 					<div class="footer-content">
 						<span class="">
-							SimKos
+							SIMKOS
 						</span>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
 						<span class="">
 							<?php echo anchor('dashboard/eula','<i class=></i> <span class="menu-text"> Licensing Agreement</span>','class="ajax-link"');?>
 							&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
-							<!-- <a href="#" target="_blank">SimKos</a> --> Hak Cipta Dilindungi <?php echo date('Y')?>
+							<!-- <a href="#" target="_blank">SIMKOS</a> --> Hak Cipta Dilindungi <?php echo date('Y')?>
 						</span>
 					</div>
 				</div>
