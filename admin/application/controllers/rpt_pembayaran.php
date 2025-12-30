@@ -1030,9 +1030,15 @@ class rpt_pembayaran extends MY_App {
         $col = 'A';
         foreach ($headers as $header) {
             $sheet->setCellValue($col.$row, $header);
-            $sheet->getColumnDimension($col)->setAutoSize(true);
             $col++;
         }
+
+        // Set Column Widths
+        $sheet->getColumnDimension('A')->setAutoSize(true);
+        $sheet->getColumnDimension('B')->setAutoSize(true);
+        $sheet->getColumnDimension('C')->setAutoSize(true);
+        $sheet->getColumnDimension('D')->setAutoSize(true);
+        $sheet->getColumnDimension('E')->setWidth(50); // Fixed width for description to force wrapping
 
         // Style: Table Header Row (Blue background, White text, Bold)
         $headerStyle = array(
@@ -1107,7 +1113,6 @@ class rpt_pembayaran extends MY_App {
                 $sheet->setCellValue('C'.$row, $rowXls->nama);
                 $sheet->setCellValue('D'.$row, $rowXls->tglmulai);
                 $sheet->setCellValue('E'.$row, $tag);
-                $sheet->getStyle('E'.$row)->getAlignment()->setWrapText(true);
                 $row++;
 			}
 		} else { // Tahunan
@@ -1167,14 +1172,26 @@ class rpt_pembayaran extends MY_App {
                 $sheet->setCellValue('C'.$row, $rowXls->nama);
                 $sheet->setCellValue('D'.$row, $rowXls->TGLDAFTAR);
                 $sheet->setCellValue('E'.$row, $tag);
-                $sheet->getStyle('E'.$row)->getAlignment()->setWrapText(true);
                 $row++;
 			}
 		}
 
-        // Apply borders to data cells
+        // Apply styles to data cells
         $lastRow = $row - 1;
-        $sheet->getStyle('A5:E'.$lastRow)->getBorders()->getAllBorders()->setBorderStyle(PHPExcel_Style_Border::BORDER_THIN);
+        $dataRange = 'A5:E'.$lastRow;
+
+        // Borders
+        $sheet->getStyle($dataRange)->getBorders()->getAllBorders()->setBorderStyle(PHPExcel_Style_Border::BORDER_THIN);
+
+        // Vertical Alignment (Center) for all
+        $sheet->getStyle($dataRange)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+
+        // Horizontal Alignment
+        $sheet->getStyle('A5:A'.$lastRow)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER); // NO
+        $sheet->getStyle('D5:D'.$lastRow)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER); // Date
+
+        // Wrap Text for Details
+        $sheet->getStyle('E5:E'.$lastRow)->getAlignment()->setWrapText(true);
 
         // Save
         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, $writerType);
