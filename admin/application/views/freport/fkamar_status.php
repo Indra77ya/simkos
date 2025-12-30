@@ -8,35 +8,68 @@
 </div>
  <div class="widget-body">
 <?	if ($display=="0"){
-		$pdf_param = "status_1" . ($id_lokasi != "" ? "_".$id_lokasi : "");
+		$pdf_param = "status_1" . ($id_lokasi != "" ? "_".$id_lokasi : "") . "_" . $sort_order;
 		echo '<div class="row" style="margin-bottom: 10px;">';
-		echo '<div class="col-md-6">';
+		echo '<div class="col-md-4">';
 		echo '<a href="'.base_url("rpt_kamar/status_kamar/".$pdf_param).'" title="Generate to pdf"><img src="'.base_url("assets/images/oficina_pdf.png").'" width=40 ><B><font size="2" style="Courier New" >Cetak ke Pdf</font></B></a>';
 		echo '</div>';
 
+		echo '<div class="col-md-8 text-right">';
+		echo '<form class="form-inline">';
+
 		if(isset($list_lokasi) && count($list_lokasi) > 1) {
-			echo '<div class="col-md-6 text-right">';
-			echo '<form class="form-inline">';
 			echo '<label>Filter Lokasi: </label> ';
-			echo '<select id="filter_lokasi" class="form-control" onchange="window.location.href=\''.base_url("rpt_kamar/status_kamar/status_0_").'\' + this.value">';
+			echo '<select id="filter_lokasi" class="form-control" onchange="updateFilter()">';
 			echo '<option value="">- Semua Lokasi -</option>';
 			foreach($list_lokasi as $loc) {
 				$selected = ($id_lokasi == $loc->id) ? 'selected' : '';
 				echo '<option value="'.$loc->id.'" '.$selected.'>'.$loc->lokasi.'</option>';
 			}
-			echo '</select>';
-			echo '</form>';
-			echo '</div>';
-		}
+			echo '</select>&nbsp;&nbsp;';
+		} else {
+            // Hidden input to maintain location ID if user only has access to one location
+            $val_lokasi = (isset($lokasi) && isset($lokasi->id)) ? $lokasi->id : htmlspecialchars($id_lokasi);
+            echo '<input type="hidden" id="filter_lokasi" value="'.$val_lokasi.'">';
+        }
+
+		echo '<label>Urutkan: </label> ';
+		echo '<select id="filter_sort" class="form-control" onchange="updateFilter()">';
+		echo '<option value="asc" '.($sort_order == 'asc' ? 'selected' : '').'>A - Z</option>';
+		echo '<option value="desc" '.($sort_order == 'desc' ? 'selected' : '').'>Z - A</option>';
+		echo '</select>';
+
+		echo '</form>';
 		echo '</div>';
+
+		echo '</div>';
+
+		echo '<script>
+		function updateFilter() {
+			var loc = document.getElementById("filter_lokasi").value;
+			var sort = document.getElementById("filter_sort").value;
+			// If location is hidden input (empty value for "All"), ensure we handle it.
+            // But wait, for non-superadmin, list_lokasi is empty, so the dropdown is not shown.
+            // The logic above put a hidden input.
+            // However, the original URL structure relies on the "param" passed to the controller.
+            // If the user is not superadmin, they cant change location, so passing their location ID back
+            // via URL might be redundant if the controller already enforces it, but safe.
+            // Actually, if we pass a location ID that the user doesn\'t have access to, the controller blocks it.
+            // If we pass empty, the controller defaults to their location.
+            // So for non-superadmin, loc can be ignored or passed as is.
+
+            // Let\'s just redirect.
+			window.location.href = "'.base_url("rpt_kamar/status_kamar/status_0_").'" + loc + "_" + sort;
+		}
+		</script>';
 	}
 	
 	if (sizeof($lokasi)<=1){
 	echo '<table  class="'.($display=="0"?"table table-bordered table-hover":"mytable").'">'; 	
 	
-		
-		$str="select * from kamar where idlokasi=".$lokasi->id." order by labelkamar";
-		$jml= $this->db->query("select count(*) cek from kamar where idlokasi=".$lokasi->id." order by labelkamar")->row(); 
+		$order_sql = " order by labelkamar " . $sort_order;
+        $loc_id = (isset($lokasi->id) ? $lokasi->id : 0);
+		$str="select * from kamar where idlokasi=".$loc_id . $order_sql;
+		$jml= $this->db->query("select count(*) cek from kamar where idlokasi=".$loc_id . $order_sql)->row();
 		echo '<thead>';
 		echo '<tr><th>No</th><th>Kamar</th><th width="25%">Fasilitas</th><th>Kuota</th><th>Terisi</th><th>Sisa</th><th>Tarif</th></tr>';
 		echo '</thead>';
@@ -84,8 +117,9 @@
 			echo '<table  class="'.($display=="0"?"table table-bordered table-hover":"mytable").'">'; 	
 	
 		
-		$str="select * from kamar where idlokasi=".$rsLokasi->id." order by labelkamar";
-		$jml= $this->db->query("select count(*) cek from kamar where idlokasi=".$rsLokasi->id." order by labelkamar")->row(); 
+		$order_sql = " order by labelkamar " . $sort_order;
+		$str="select * from kamar where idlokasi=".$rsLokasi->id . $order_sql;
+		$jml= $this->db->query("select count(*) cek from kamar where idlokasi=".$rsLokasi->id . $order_sql)->row();
 		echo '<thead>';
 		echo '<tr><th>No</th><th>Kamar</th><th width="25%">Fasilitas</th><th>Kuota</th><th>Terisi</th><th>Sisa</th><th>Tarif</th></tr>';
 		echo '</thead>';
@@ -143,7 +177,7 @@
 <div class="row" style="text-align:center">
 	<div class="col-md-12">	<input type="hidden" name="param" id="param" value="<?=$param?>">
 		<!-- <button  id="btToExcel" class="btn btn-success" >Cetak Xls</button>&nbsp; -->
-		<?php $pdf_param = "status_1" . ($id_lokasi != "" ? "_".$id_lokasi : ""); ?>
+		<?php $pdf_param = "status_1" . ($id_lokasi != "" ? "_".$id_lokasi : "") . "_" . $sort_order; ?>
 		<a href="<?=base_url("rpt_kamar/status_kamar/".$pdf_param)?>" class="btn btn-success">Cetak/Download</a><br>
 	</div>
 </div>	
