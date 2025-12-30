@@ -373,7 +373,7 @@ config var as global var
 */
 $config['mymenu']='';
 $config['mysubmenu']='';
-$config['link_admin']='https://simkos.kostgriyokusuroboyo.my.id/admin/';
+$config['link_admin']='http://localhost/simkos/admin/';
 
 function __autoload($class)
 {
