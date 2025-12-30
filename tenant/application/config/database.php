@@ -49,10 +49,10 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['port']     = 3307;
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'simkos';
+$db['default']['port']     = 3306;
+$db['default']['username'] = 'kost2138_kostgriyokusuroboyo';
+$db['default']['password'] = '@uPz3QmD3qEMDvH+';
+$db['default']['database'] = 'kost2138_kostgriyokusuroboyo';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
