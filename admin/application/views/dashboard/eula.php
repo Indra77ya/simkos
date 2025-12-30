@@ -23,26 +23,30 @@
 										
 										<div style="font-size: 14px;">
 <p>
-  Aplikasi ini dikembangkan dengan lisensi yang berlaku 
-  <b>hanya untuk satu orang atau satu lembaga klien SimKos</b>.
+    Aplikasi ini dikembangkan dengan lisensi yang berlaku 
+    <b>hanya untuk satu orang atau satu lembaga klien SIMKOS</b>.
 </p>
 
 <ul>
-  <li>
-    <b>Hak Pemegang Lisensi:</b> Pemegang lisensi berhak melakukan perubahan fitur 
-    dan/atau pengembangan lebih lanjut sesuai kebutuhan lembaga atau perusahaannya, 
-    baik dengan bekerja sama dengan SimKos maupun melalui vendor pengembang lain.
-  </li>
-  <li>
-    <b>Larangan:</b> Dilarang keras menyalin, mendistribusikan, atau mengkomersialkan aplikasi ini 
-    kepada pihak lain dalam bentuk asli, hasil modifikasi, maupun pengembangan turunan apa pun 
-    tanpa persetujuan tertulis dari SimKos.
-  </li>
-  <li>
-    <b>Tanggung Jawab:</b> Segala bentuk pelanggaran menjadi tanggung jawab penuh pelanggar, 
-    baik secara hukum maupun moral, di hadapan Allah Ta’ala sebagai Pelindung karya 
-    dan kreativitas hamba-hamba-Nya.
-  </li>
+    <li style="margin-bottom: 8px;">
+        <b>Hak Pemegang Lisensi:</b><br> 
+        Pemegang lisensi berhak melakukan perubahan fitur dan/atau pengembangan lebih lanjut sesuai 
+        kebutuhan internal lembaga atau perusahaannya, baik dengan bekerja sama dengan SIMKOS 
+        maupun melalui vendor pengembang lain.
+    </li>
+    
+    <li style="margin-bottom: 8px;">
+        <b>Larangan:</b><br> 
+        Dilarang keras menyalin, mendistribusikan, atau mengkomersialkan aplikasi ini kepada pihak lain 
+        dalam bentuk asli, hasil modifikasi, maupun pengembangan turunan apa pun 
+        tanpa persetujuan tertulis dari SIMKOS.
+    </li>
+    
+    <li>
+        <b>Sanksi Hukum:</b><br> 
+        Segala bentuk pelanggaran hak cipta ini akan diproses melalui jalur hukum yang berlaku 
+        serta dikenakan sanksi sesuai dengan undang-undang Hak Kekayaan Intelektual di Indonesia.
+    </li>
 </ul>
 
 									</div>
