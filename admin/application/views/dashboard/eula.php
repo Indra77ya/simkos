@@ -14,7 +14,7 @@
 
 										<hr />
 										<h3 class="lighter smaller">
-											Agreement Seluruh Software SIMKOS :											
+											Agreement Seluruh Software SimKos :
 										</h3>
 
 										<div class="space"></div>
