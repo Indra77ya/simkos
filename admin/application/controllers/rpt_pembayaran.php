@@ -1034,7 +1034,8 @@ class rpt_pembayaran extends MY_App {
 								$denda=" $hariDenda Hari";
 							}
 						}
-						$tag.="Tagihan : ".$arrBulan[intval($mm_tglMulai)]." ".$yy_tglMulai.", Telat  : ".$denda." \n ";
+						// Use string key for arrBulan because keys are "01", "02", etc.
+						$tag.="Tagihan : ".$arrBulan[$mm_tglMulai]." ".$yy_tglMulai.", Telat  : ".$denda." \n ";
 					}
 					
 					$mm_tglMulai=intval($mm_tglMulai)+1;
