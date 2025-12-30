@@ -8,15 +8,35 @@
 </div>
  <div class="widget-body">
 <?	if ($display=="0"){
-		echo '<a href="'.base_url("rpt_kamar/status_kamar/status_1").'" title="Generate to pdf"><img src="'.base_url("assets/images/oficina_pdf.png").'" width=40 ><B><font size="2" style="Courier New" >Cetak ke Pdf</font></B></a>&nbsp;<BR>';
+		$pdf_param = "status_1" . ($id_lokasi != "" ? "_".$id_lokasi : "");
+		echo '<div class="row" style="margin-bottom: 10px;">';
+		echo '<div class="col-md-6">';
+		echo '<a href="'.base_url("rpt_kamar/status_kamar/".$pdf_param).'" title="Generate to pdf"><img src="'.base_url("assets/images/oficina_pdf.png").'" width=40 ><B><font size="2" style="Courier New" >Cetak ke Pdf</font></B></a>';
+		echo '</div>';
+
+		if(isset($list_lokasi) && count($list_lokasi) > 1) {
+			echo '<div class="col-md-6 text-right">';
+			echo '<form class="form-inline">';
+			echo '<label>Filter Lokasi: </label> ';
+			echo '<select id="filter_lokasi" class="form-control" onchange="window.location.href=\''.base_url("rpt_kamar/status_kamar/status_0_").'\' + this.value">';
+			echo '<option value="">- Semua Lokasi -</option>';
+			foreach($list_lokasi as $loc) {
+				$selected = ($id_lokasi == $loc->id) ? 'selected' : '';
+				echo '<option value="'.$loc->id.'" '.$selected.'>'.$loc->lokasi.'</option>';
+			}
+			echo '</select>';
+			echo '</form>';
+			echo '</div>';
+		}
+
+		echo '</div>';
 	}
 	
 	if (sizeof($lokasi)<=1){
-	echo '<table  class="'.($display=="0"?"table table-bordered table-hover":"mytable").'">'; 	
+	echo '<table  class="'.($display=="0"?"table table-bordered table-hover data-table":"mytable").'">';
 	
-		
-		$str="select * from kamar where idlokasi=".$lokasi->id." order by labelkamar";
-		$jml= $this->db->query("select count(*) cek from kamar where idlokasi=".$lokasi->id." order by labelkamar")->row(); 
+		$str="select * from kamar where idlokasi=".(isset($lokasi->id) ? $lokasi->id : 0)." order by labelkamar";
+		$jml= $this->db->query("select count(*) cek from kamar where idlokasi=".(isset($lokasi->id) ? $lokasi->id : 0)." order by labelkamar")->row();
 		echo '<thead>';
 		echo '<tr><th>No</th><th>Kamar</th><th width="25%">Fasilitas</th><th>Kuota</th><th>Terisi</th><th>Sisa</th><th>Tarif</th></tr>';
 		echo '</thead>';
@@ -61,11 +81,11 @@
 	}else{
 		foreach ( $lokasi as $rsLokasi){
 			echo '<H4>Lokasi/Cabang Kost : [ '.$rsLokasi->kode_kost.' ]  '.strtoupper($rsLokasi->lokasi).'</H4>';
-			echo '<table  class="'.($display=="0"?"table table-bordered table-hover":"mytable").'">'; 	
+	echo '<table  class="'.($display=="0"?"table table-bordered table-hover data-table":"mytable").'">';
 	
 		
 		$str="select * from kamar where idlokasi=".$rsLokasi->id." order by labelkamar";
-		$jml= $this->db->query("select count(*) cek from kamar where idlokasi=".$rsLokasi->id." order by labelkamar")->row(); 
+		$jml= $this->db->query("select count(*) cek from kamar where idlokasi=".$rsLokasi->id." order by labelkamar")->row();
 		echo '<thead>';
 		echo '<tr><th>No</th><th>Kamar</th><th width="25%">Fasilitas</th><th>Kuota</th><th>Terisi</th><th>Sisa</th><th>Tarif</th></tr>';
 		echo '</thead>';
@@ -123,9 +143,15 @@
 <div class="row" style="text-align:center">
 	<div class="col-md-12">	<input type="hidden" name="param" id="param" value="<?=$param?>">
 		<!-- <button  id="btToExcel" class="btn btn-success" >Cetak Xls</button>&nbsp; -->
-		<a href="<?=base_url("rpt_kamar/status_kamar/status_1")?>" class="btn btn-success">Cetak/Download</a><br>		
+		<?php $pdf_param = "status_1" . ($id_lokasi != "" ? "_".$id_lokasi : ""); ?>
+		<a href="<?=base_url("rpt_kamar/status_kamar/".$pdf_param)?>" class="btn btn-success">Cetak/Download</a><br>
 	</div>
-</div>	
+</div>
+<script>
+$(document).ready(function(){
+	$('.data-table').DataTable();
+});
+</script>
 <?}?>
 <script>
 $('#btToExcel').click(function(){		

@@ -28,12 +28,17 @@ class rpt_kamar extends MY_App {
 		$header=$this->commonlib->reportHeader();
 		$footer=$this->commonlib->reportFooter();		
 		
-		$op=""; $title=""; $nmfile="";$display=0;
+		$op=""; $title=""; $nmfile="";$display=0;$id_lokasi="";
 		if ($param!=null){	//param = status_0 = menu status, display view=0, pdf=1
 			$arr=explode("_",$param);
 			$op=$arr[0];
 			$display=$arr[1];	
-			
+			if(isset($arr[2])) $id_lokasi=$arr[2];
+		}
+
+		// Security Validation
+		if ($id_lokasi != "" && !is_numeric($id_lokasi)) {
+			$id_lokasi = "";
 		}
 		
 		switch ($op){
@@ -49,17 +54,25 @@ class rpt_kamar extends MY_App {
 				break;
 		}
 		
+		$data['list_lokasi'] = array();
 		if ($this->session->userdata('auth')->ROLE=="Superadmin"){
-			 if ($this->db->query("SELECT * from lokasi where isactive=1")->num_rows()<=1){
-		        $data['lokasi'] = $this->db->query("SELECT * from lokasi where isactive=1")->row(); 
-		    }else{
-			    $data['lokasi'] = $this->db->query("SELECT * from lokasi where isactive=1")->result(); 
-		    }
+			$data['list_lokasi'] = $this->db->query("SELECT * from lokasi where isactive=1")->result();
+
+			if ($id_lokasi != ""){
+				$data['lokasi'] = $this->db->query("SELECT * from lokasi where isactive=1 and id=?", array($id_lokasi))->row();
+			} else {
+				if ($this->db->query("SELECT * from lokasi where isactive=1")->num_rows()<=1){
+					$data['lokasi'] = $this->db->query("SELECT * from lokasi where isactive=1")->row();
+				}else{
+					$data['lokasi'] = $this->db->query("SELECT * from lokasi where isactive=1")->result();
+				}
+			}
 		}else{
 			$data['lokasi'] = $this->db->query("SELECT * from lokasi where isactive=1 and id=".$this->session->userdata('auth')->IDLOKASI)->row(); 
 			//$data['lokasi']=$this->session->userdata('auth')->IDLOKASI;
 		}
 
+		$data['id_lokasi'] = $id_lokasi;
 		$data['title']=$title;
 		$data['display']=$display;
 		$data['nmfile']=$nmfile;
